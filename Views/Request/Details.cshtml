@@ -1,0 +1,128 @@
+﻿@model HelpDeskWebSite.Models.EmailMessage
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid" style="margin:10px; width: calc(100% - 20px); ">
+    <div class="row border rounded-lg">
+        <div class="col-xl-2" style="background-color: #E5E5E5">
+            In Development
+        </div>
+
+        <div class="col-xl-7 bg-white">
+            <div class="container">
+                <div class="row p-3">
+                    <h2>#@Html.DisplayFor(model => model.Id)</h2>
+                    <h2>@Html.DisplayFor(model => model.Subject)</h2>
+                </div>
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#home">Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#menu1">Resolution</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#menu2">History</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content pt-2">
+                    <div id="home" class="container tab-pane active p-0">
+                        <div class="card">
+                            <div class="card-header p-0">
+                                <button class="btn btn-link text-start w-100 p-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBox" aria-expanded="true" aria-controls="collapseBox">
+                                    <span>Description</span>
+                                </button>
+                            </div>
+                            <div class="collapse show" id="collapseBox">
+                                <div class="card-body">
+                                    @Html.Raw(Model.StrippedHtml)
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="menu1" class="container tab-pane fade">
+                        <br>
+                        <h3>Menu 1</h3>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <div id="menu2" class="container tab-pane fade">
+                        <br>
+                        <h3>Menu 2</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    </div>
+                </div>
+                <div class="container">
+                    <form method="post" action="/EmailMailgun/SendEmail">
+                        <div class="form-group">
+                            <label for="toField">To:</label>
+                            <input type="email" class="form-control" id="toField" name="To" placeholder="Enter recipient's email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subjectField">Subject:</label>
+                            <input type="text" class="form-control" id="subjectField" name="Subject" placeholder="Enter email subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="textField">Message:</label>
+                            <textarea class="form-control" id="textField" name="Text" rows="5" placeholder="Enter your message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Email</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-xl-3" style="background-color: #E5E5E5">
+            <h4 class="text-center p-2">Ticket Info</h4>
+            <table class="table table-borderless table-light table-no-top-border">
+                <tbody>
+                    <tr>
+                        <td class="fw-bold">Status:</td>
+                        <td>In Development</td>
+                    </tr>
+                    <tr>
+                        <td>Requester:</td>
+                        <td>
+                            @foreach (var item in Model.From)
+                            {
+                                if (item == '<')
+                                {
+                                    break; // Stops the loop if the item is '<'
+                                }
+                                else
+                                {
+                                    @Html.DisplayFor(m => item)
+                                }
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Requested at:</td>
+
+                        <td>@Model.Date.ToString("dd/MM/yyyy HH:mm")</td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td>@Html.DisplayFor(model => model.Recipient)</td>
+                    </tr>
+                    <tr>
+                        <td>Group:</td>
+                        <td>In Development</td>
+                    </tr>
+                    <tr>
+                        <td>Technician:</td>
+                        <td>In Development</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

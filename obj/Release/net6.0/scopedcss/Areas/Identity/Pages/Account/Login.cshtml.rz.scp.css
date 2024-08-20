@@ -1,0 +1,55 @@
+.sign-in[b-6yn0s43lda] {
+    width: 900px;
+    background: #fff;
+    margin: 0 auto;
+    box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -o-border-radius: 20px;
+    -ms-border-radius: 20px;
+}
+
+.signin-content[b-6yn0s43lda] {
+    padding-top: 50px;
+    padding-bottom: 60px;
+    display: flex;
+}
+
+.signin-image[b-6yn0s43lda] {
+    float: left;
+    width: 50%;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+    .signin-image p[b-6yn0s43lda] {
+        margin-top: 1.5rem;
+    }
+
+.login-box[b-6yn0s43lda] {
+    float: right;
+    width: 50%;
+}
+
+h1[b-6yn0s43lda] {
+    margin-bottom: 33px;
+    text-align: center;
+}
+
+.checkbox[b-6yn0s43lda] {
+    max-width: 70%;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+label[b-6yn0s43lda] {
+    margin: auto;
+}
+
+button[b-6yn0s43lda] {
+    margin-top: 8px;
+    width: 70%;
+}

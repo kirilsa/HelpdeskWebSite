@@ -1,0 +1,104 @@
+﻿@model HelpDeskWebSite.Models.EmailMessage
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>EmailMessage</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Recipient" class="control-label"></label>
+                <input asp-for="Recipient" class="form-control" />
+                <span asp-validation-for="Recipient" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sender" class="control-label"></label>
+                <input asp-for="Sender" class="form-control" />
+                <span asp-validation-for="Sender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="From" class="control-label"></label>
+                <input asp-for="From" class="form-control" />
+                <span asp-validation-for="From" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject" class="control-label"></label>
+                <input asp-for="Subject" class="form-control" />
+                <span asp-validation-for="Subject" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BodyPlain" class="control-label"></label>
+                <input asp-for="BodyPlain" class="form-control" />
+                <span asp-validation-for="BodyPlain" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StrippedText" class="control-label"></label>
+                <input asp-for="StrippedText" class="form-control" />
+                <span asp-validation-for="StrippedText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StrippedSignature" class="control-label"></label>
+                <input asp-for="StrippedSignature" class="form-control" />
+                <span asp-validation-for="StrippedSignature" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BodyHtml" class="control-label"></label>
+                <input asp-for="BodyHtml" class="form-control" />
+                <span asp-validation-for="BodyHtml" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StrippedHtml" class="control-label"></label>
+                <input asp-for="StrippedHtml" class="form-control" />
+                <span asp-validation-for="StrippedHtml" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AttachmentCount" class="control-label"></label>
+                <input asp-for="AttachmentCount" class="form-control" />
+                <span asp-validation-for="AttachmentCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Timestamp" class="control-label"></label>
+                <input asp-for="Timestamp" class="form-control" />
+                <span asp-validation-for="Timestamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Token" class="control-label"></label>
+                <input asp-for="Token" class="form-control" />
+                <span asp-validation-for="Token" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Signature" class="control-label"></label>
+                <input asp-for="Signature" class="form-control" />
+                <span asp-validation-for="Signature" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MessageHeaders" class="control-label"></label>
+                <input asp-for="MessageHeaders" class="form-control" />
+                <span asp-validation-for="MessageHeaders" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContentIdMap" class="control-label"></label>
+                <input asp-for="ContentIdMap" class="form-control" />
+                <span asp-validation-for="ContentIdMap" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

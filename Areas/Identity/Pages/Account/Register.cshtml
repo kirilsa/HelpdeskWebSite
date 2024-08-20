@@ -1,0 +1,42 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<section class="signup">
+    <div class="signup-content">
+        <div class="signup-form">
+            <h1>@ViewData["Title"]</h1>
+            <form class="register-form" id="register-form" asp-route-returnUrl="@Model.ReturnUrl" method="POST">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form__group field">
+                    <input asp-for="Input.Email" class="form__field" autocomplete="username" aria-required="true" />
+                    <label asp-for="Input.Email"></label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form__group field">
+                    <input asp-for="Input.Password" class="form__field" autocomplete="new-password" aria-required="true" />
+                    <label asp-for="Input.Password"></label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form__group field">
+                    <input asp-for="Input.ConfirmPassword" class="form__field" autocomplete="new-password" aria-required="true" />
+                    <label asp-for="Input.ConfirmPassword"></label>
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button id="registerSubmit" type="submit" class="w-75 btn btn-lg btn-primary">Register</button>
+                </div>
+            </form>
+        </div>
+        <div class="signup-image">
+            <figure><img src="~/image/signup-image.jpg" alt="sing up image"></figure>
+            <a href="#" class="signup-image-link">I am already member</a>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,39 @@
+Connected to imaps://imap.gmail.com:993/
+S: * OK Gimap ready for requests from 2a02:c7e:5c07:9d00:19cc:fd29:43e0:4ad7 w6mb72719950wrr
+C: B00000000 CAPABILITY
+S: * CAPABILITY IMAP4rev1 UNSELECT IDLE NAMESPACE QUOTA ID XLIST CHILDREN X-GM-EXT-1 XYZZY SASL-IR AUTH=XOAUTH2 AUTH=PLAIN AUTH=PLAIN-CLIENTTOKEN AUTH=OAUTHBEARER
+S: B00000000 OK Thats all she wrote! w6mb72719950wrr
+C: B00000001 AUTHENTICATE PLAIN ********
+S: * CAPABILITY IMAP4rev1 UNSELECT IDLE NAMESPACE QUOTA ID XLIST CHILDREN X-GM-EXT-1 UIDPLUS COMPRESS=DEFLATE ENABLE MOVE CONDSTORE ESEARCH UTF8=ACCEPT LIST-EXTENDED LIST-STATUS LITERAL- SPECIAL-USE APPENDLIMIT=35651584
+S: B00000001 OK kyrylsolom@gmail.com authenticated (Success)
+C: B00000002 NAMESPACE
+S: * NAMESPACE (("" "/")) NIL NIL
+S: B00000002 OK Success
+C: B00000003 LIST "" "INBOX" RETURN (SUBSCRIBED CHILDREN)
+S: * LIST (\HasNoChildren \Subscribed) "/" "INBOX"
+S: B00000003 OK Success
+C: B00000004 LIST (SPECIAL-USE) "" "*" RETURN (SUBSCRIBED CHILDREN)
+S: * LIST (\All \HasNoChildren \Subscribed) "/" "[Gmail]/All Mail"
+S: * LIST (\HasNoChildren \Subscribed \Trash) "/" "[Gmail]/Bin"
+S: * LIST (\Drafts \HasNoChildren \Subscribed) "/" "[Gmail]/Drafts"
+S: * LIST (\HasNoChildren \Sent \Subscribed) "/" "[Gmail]/Sent Mail"
+S: * LIST (\HasNoChildren \Junk \Subscribed) "/" "[Gmail]/Spam"
+S: * LIST (\Flagged \HasNoChildren \Subscribed) "/" "[Gmail]/Starred"
+S: B00000004 OK Success
+C: B00000005 LIST "" "[Gmail]" RETURN (SUBSCRIBED CHILDREN)
+S: * LIST (\HasChildren \NonExistent \Subscribed) "/" "[Gmail]"
+S: B00000005 OK Success
+C: B00000006 SELECT INBOX (CONDSTORE)
+S: * FLAGS (\Answered \Flagged \Draft \Deleted \Seen $NotPhishing $Phishing)
+S: * OK [PERMANENTFLAGS (\Answered \Flagged \Draft \Deleted \Seen $NotPhishing $Phishing \*)] Flags permitted.
+S: * OK [UIDVALIDITY 1] UIDs valid.
+S: * 262 EXISTS
+S: * 0 RECENT
+S: * OK [UIDNEXT 265] Predicted next UID.
+S: * OK [HIGHESTMODSEQ 36699]
+S: B00000006 OK [READ-WRITE] INBOX selected. (Success)
+C: B00000007 UNSELECT
+S: B00000007 OK Returned to authenticated state. (Success)
+C: B00000008 LOGOUT
+S: * BYE LOGOUT Requested
+S: B00000008 OK 73 good day (Success)
