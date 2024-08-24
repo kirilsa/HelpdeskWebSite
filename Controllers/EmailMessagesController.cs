@@ -42,7 +42,14 @@ namespace HelpDeskWebSite.Controllers
                 return NotFound();
             }
 
-            return View(emailMessage);
+            var conversationId = _context.Conversations.FirstOrDefault(c => c.ConversationId == id).UsersConversation;
+            List<int> idsToDisplay = conversationId.Split(',')
+                .Select(int.Parse)
+                .ToList();
+
+            var filtredData = _context.EmailMessages.Where(d => idsToDisplay.Contains(d.Id)).ToList();
+
+            return View(filtredData);
         }
 
         // GET: EmailMessages/Create

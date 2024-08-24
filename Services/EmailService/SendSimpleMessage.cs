@@ -29,7 +29,6 @@ namespace HelpDeskWebSite.Services.EmailService
             request.AddParameter("to", to);
             request.AddParameter("subject", subject);
             request.AddParameter("text", text);
-            request.AddParameter("X-Conversation-ID", 12);
 
             return client.Execute(request);
         }

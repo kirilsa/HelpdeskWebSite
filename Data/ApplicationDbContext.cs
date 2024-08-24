@@ -12,6 +12,7 @@ namespace HelpDeskWebSite.Data
         }
         public DbSet<Conversation> Conversations { get; set; }
         public DbSet<EmailMessage> EmailMessages { get; set; }
+        public DbSet<ListOfRequests> ListOfRequests { get; set; }
         //public DbSet<SendEmailMailgun> SendEmailMailgun { get; set;}
     }
 }

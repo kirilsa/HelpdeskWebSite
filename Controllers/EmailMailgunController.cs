@@ -2,6 +2,7 @@
 using HelpDeskWebSite.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SQLitePCL;
 
 namespace HelpDeskWebSite.Controllers
@@ -26,6 +27,47 @@ namespace HelpDeskWebSite.Controllers
 
                 if (response.IsSuccessful)
                 {
+                    //save sent email to db
+                    EmailMessage emailMessage = new EmailMessage()
+                    {
+                        Recipient = model.To,
+                        Subject = model.Subject,
+                        From = "Existing User Temp <one@solominskyi.uk>",
+                        StrippedHtml = model.Text
+                    };
+                    DateTimeOffset Date = DateTimeOffset.Now;
+                    emailMessage.Date = Date;
+
+                    _context.Add(emailMessage);
+                    await _context.SaveChangesAsync();
+
+                    //save info to Conversation table 
+                    string subject = emailMessage.Subject;
+                    int emailConversationId;
+
+                    if (subject != null && subject.StartsWith("[ID") && int.TryParse(subject.Substring(3, 4), out emailConversationId))
+                    {
+                        var entity = await _context.Conversations.SingleOrDefaultAsync(e => e.ConversationId == emailConversationId);
+
+                        if (entity != null)
+                        {
+                            entity.UsersConversation += ",0" + emailMessage.Id;
+
+                            _context.Conversations.Update(entity);
+                        }
+                    }
+                    else
+                    {
+                        var entity = new Conversation
+                        {
+                            UsersConversation = "0" + emailMessage.Id.ToString()
+                        };
+
+                        _context.Conversations.Add(entity);
+                    }
+
+                    await _context.SaveChangesAsync();
+
                     return RedirectToAction("Index", "Home");
                 }
                 else

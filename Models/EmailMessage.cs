@@ -56,5 +56,7 @@ namespace HelpDeskWebSite.Models
 
         [ModelBinder(Name = "Date")]
         public DateTimeOffset Date { get; set; }
+        public int? InReply { get; set; } = null;
+        public string status { get; set; }
     }
 }

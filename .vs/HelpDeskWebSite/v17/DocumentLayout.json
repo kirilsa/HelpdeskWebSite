@@ -3,7 +3,84 @@
   "WorkspaceRootPath": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-HelpDeskWebSite-fc078c3b-b756-4081-af6c-db882668025b\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\controllers\\emailmailguncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:controllers\\emailmailguncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Data\\Migrations\\20240824164015_headOfConversation01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Data\\Migrations\\20240824164015_headOfConversation01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\models\\listofrequests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:models\\listofrequests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\models\\conversation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:models\\conversation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Data\\Migrations\\20240824163718_headOfConversation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Data\\Migrations\\20240824163718_headOfConversation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\controllers\\emailmessagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:controllers\\emailmessagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\controllers\\requestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:controllers\\requestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\views\\request\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:views\\request\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\views\\tickettracking\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:views\\tickettracking\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\models\\emailmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:models\\emailmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\controllers\\tickettrackingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:controllers\\tickettrackingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\views\\tickettracking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:views\\tickettracking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\views\\request\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:views\\request\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\views\\request\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:views\\request\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\services\\emailservice\\sendsimplemessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:services\\emailservice\\sendsimplemessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\data\\migrations\\20240822193256_inreply.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:data\\migrations\\20240822193256_inreply.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\data\\migrations\\20240822194230_status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:data\\migrations\\20240822194230_status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,8 +90,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 8,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Conversation.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Models\\Conversation.cs",
+              "RelativeDocumentMoniker": "Models\\Conversation.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Models\\Conversation.cs",
+              "RelativeToolTip": "Models\\Conversation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T22:47:00.57Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20240824164015_headOfConversation01.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Data\\Migrations\\20240824164015_headOfConversation01.cs",
+              "RelativeDocumentMoniker": "Data\\Migrations\\20240824164015_headOfConversation01.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Data\\Migrations\\20240824164015_headOfConversation01.cs",
+              "RelativeToolTip": "Data\\Migrations\\20240824164015_headOfConversation01.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T16:40:15.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ListOfRequests.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Models\\ListOfRequests.cs",
+              "RelativeDocumentMoniker": "Models\\ListOfRequests.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Models\\ListOfRequests.cs",
+              "RelativeToolTip": "Models\\ListOfRequests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T16:32:09.372Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -29,16 +146,212 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "secrets.json",
-              "DocumentMoniker": "C:\\Users\\USER\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-HelpDeskWebSite-fc078c3b-b756-4081-af6c-db882668025b\\secrets.json",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-HelpDeskWebSite-fc078c3b-b756-4081-af6c-db882668025b\\secrets.json",
-              "ToolTip": "C:\\Users\\USER\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-HelpDeskWebSite-fc078c3b-b756-4081-af6c-db882668025b\\secrets.json",
-              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\aspnet-HelpDeskWebSite-fc078c3b-b756-4081-af6c-db882668025b\\secrets.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-20T20:49:54.626Z",
+              "DocumentIndex": 4,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T22:46:44.466Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmailMailgunController.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Controllers\\EmailMailgunController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EmailMailgunController.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Controllers\\EmailMailgunController.cs",
+              "RelativeToolTip": "Controllers\\EmailMailgunController.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAAwDUAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T21:18:19.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmailController.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Controllers\\EmailController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EmailController.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Controllers\\EmailController.cs",
+              "RelativeToolTip": "Controllers\\EmailController.cs",
+              "ViewState": "AQIAABcAAACgiy66RBc1wCwAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T21:09:46.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20240824163718_headOfConversation.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Data\\Migrations\\20240824163718_headOfConversation.cs",
+              "RelativeDocumentMoniker": "Data\\Migrations\\20240824163718_headOfConversation.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Data\\Migrations\\20240824163718_headOfConversation.cs",
+              "RelativeToolTip": "Data\\Migrations\\20240824163718_headOfConversation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T16:37:19.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T22:56:32.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Views\\TicketTracking\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\TicketTracking\\Details.cshtml",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Views\\TicketTracking\\Details.cshtml",
+              "RelativeToolTip": "Views\\TicketTracking\\Details.cshtml",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAAAHsAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-20T23:06:39.178Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Views\\Request\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Request\\Details.cshtml",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Views\\Request\\Details.cshtml",
+              "RelativeToolTip": "Views\\Request\\Details.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABcAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-20T23:04:48.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EmailMessagesController.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Controllers\\EmailMessagesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EmailMessagesController.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Controllers\\EmailMessagesController.cs",
+              "RelativeToolTip": "Controllers\\EmailMessagesController.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAQwB8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T22:38:15.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RequestController.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Controllers\\RequestController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RequestController.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Controllers\\RequestController.cs",
+              "RelativeToolTip": "Controllers\\RequestController.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwCAAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T23:00:20.654Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TicketTrackingController.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Controllers\\TicketTrackingController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TicketTrackingController.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Controllers\\TicketTrackingController.cs",
+              "RelativeToolTip": "Controllers\\TicketTrackingController.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAD4vyIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T22:57:57.391Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EmailMessage.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Models\\EmailMessage.cs",
+              "RelativeDocumentMoniker": "Models\\EmailMessage.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Models\\EmailMessage.cs",
+              "RelativeToolTip": "Models\\EmailMessage.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAswDsAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-22T19:31:30.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "20240822193256_InReply.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Data\\Migrations\\20240822193256_InReply.cs",
+              "RelativeDocumentMoniker": "Data\\Migrations\\20240822193256_InReply.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Data\\Migrations\\20240822193256_InReply.cs",
+              "RelativeToolTip": "Data\\Migrations\\20240822193256_InReply.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-22T19:32:56.659Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "20240822194230_status.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Data\\Migrations\\20240822194230_status.cs",
+              "RelativeDocumentMoniker": "Data\\Migrations\\20240822194230_status.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Data\\Migrations\\20240822194230_status.cs",
+              "RelativeToolTip": "Data\\Migrations\\20240822194230_status.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-22T19:42:30.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Views\\Request\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Request\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Views\\Request\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Request\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-20T23:03:45.559Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Views\\Request\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Request\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Views\\Request\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Request\\Delete.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-20T23:04:43.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Views\\TicketTracking\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\TicketTracking\\Index.cshtml",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Views\\TicketTracking\\Index.cshtml",
+              "RelativeToolTip": "Views\\TicketTracking\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-20T23:11:27.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "SendSimpleMessage.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Services\\EmailService\\SendSimpleMessage.cs",
+              "RelativeDocumentMoniker": "Services\\EmailService\\SendSimpleMessage.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Services\\EmailService\\SendSimpleMessage.cs",
+              "RelativeToolTip": "Services\\EmailService\\SendSimpleMessage.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAIBJwCAAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T21:15:26.716Z"
             }
           ]
         }

@@ -21,16 +21,16 @@ namespace HelpDeskWebSite.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("Id ,Recipient,Sender,From,Subject,BodyPlain,StrippedText,StrippedSignature,BodyHtml,StrippedHtml,AttachmentCount,Timestamp,Token,Signature,MessageHeaders,ContentIdMap, Date")] EmailMessage testClass)
+        public async Task<IActionResult> Create([Bind("Id ,Recipient,Sender,From,Subject,BodyPlain,StrippedText,StrippedSignature,BodyHtml,StrippedHtml,AttachmentCount,Timestamp,Token,Signature,MessageHeaders,ContentIdMap, Date")] EmailMessage emailMessage)
         {
             if (ModelState.IsValid)
             {
                 DateTimeOffset Date = DateTimeOffset.Now;
-                testClass.Date = Date;
-                _context.Add(testClass);
+                emailMessage.Date = Date;
+                _context.Add(emailMessage);
                 await _context.SaveChangesAsync();
 
-                string subject = testClass.Subject;
+                string subject = emailMessage.Subject;
                 int emailConversationId;
 
                 if (subject != null && subject.StartsWith("[ID") && int.TryParse(subject.Substring(3, 4), out emailConversationId))
@@ -39,7 +39,7 @@ namespace HelpDeskWebSite.Controllers
 
                     if (entity != null)
                     {
-                        entity.UsersConversation += ", " + testClass.Id;
+                        entity.UsersConversation += "," + emailMessage.Id;
 
                         _context.Conversations.Update(entity);
                     }
@@ -48,14 +48,14 @@ namespace HelpDeskWebSite.Controllers
                 {
                     var entity = new Conversation
                     {
-                        UsersConversation = testClass.Id.ToString()
+                        UsersConversation = emailMessage.Id.ToString()
                     };
 
                     _context.Conversations.Add(entity);
                 }
 
                 await _context.SaveChangesAsync();
-                return Ok(testClass);
+                return Ok(emailMessage);
             }
 
             return BadRequest();

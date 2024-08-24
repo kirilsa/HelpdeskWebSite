@@ -4,6 +4,7 @@ using HelpDeskWebSite.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HelpDeskWebSite.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240822194230_status")]
+    partial class status
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -105,19 +107,6 @@ namespace HelpDeskWebSite.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("EmailMessages");
-                });
-
-            modelBuilder.Entity("HelpDeskWebSite.Models.ListOfRequests", b =>
-                {
-                    b.Property<int>("HeadOfConversation")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HeadOfConversation"), 1L, 1);
-
-                    b.HasKey("HeadOfConversation");
-
-                    b.ToTable("ListOfRequests");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
