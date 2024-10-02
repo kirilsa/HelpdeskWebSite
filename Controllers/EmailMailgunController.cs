@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SQLitePCL;
+using System.Text.RegularExpressions;
 
 namespace HelpDeskWebSite.Controllers
 {
@@ -28,42 +29,50 @@ namespace HelpDeskWebSite.Controllers
                 if (response.IsSuccessful)
                 {
                     //save sent email to db
+                    DateTimeOffset Date = DateTimeOffset.Now;
                     EmailMessage emailMessage = new EmailMessage()
                     {
                         Recipient = model.To,
                         Subject = model.Subject,
                         From = "Existing User Temp <one@solominskyi.uk>",
-                        StrippedHtml = model.Text
+                        StrippedHtml = model.Text,
+                        Date = Date,
+                        EmailType = "sent"
                     };
-                    DateTimeOffset Date = DateTimeOffset.Now;
-                    emailMessage.Date = Date;
-
                     _context.Add(emailMessage);
                     await _context.SaveChangesAsync();
 
-                    //save info to Conversation table 
+                    //Keep track of the Users conversation
                     string subject = emailMessage.Subject;
                     int emailConversationId;
+                    int IdOfTheNewEmail = emailMessage.Id;
 
-                    if (subject != null && subject.StartsWith("[ID") && int.TryParse(subject.Substring(3, 4), out emailConversationId))
+                    //if the db already has users request with this ID
+                    if (subject != null && subject.StartsWith("[ID") && int.TryParse(subject.Substring(3, 1), out emailConversationId))
                     {
-                        var entity = await _context.Conversations.SingleOrDefaultAsync(e => e.ConversationId == emailConversationId);
+                        int currentRequestId = int.Parse(Regex.Replace(subject, "[^0-9]", ""));
+                        int? previousEmialIDOfConversation = await _context.ListOfRequests
+                            .Where(i => i.ListOfRequestsID == currentRequestId).Select(i => i.TailOfConversation).FirstOrDefaultAsync();
+                        var emailEntityOfPrevEmail = await _context.EmailMessages.SingleOrDefaultAsync(e => e.Id == previousEmialIDOfConversation);
 
-                        if (entity != null)
+                        if (emailEntityOfPrevEmail != null)
                         {
-                            entity.UsersConversation += ",0" + emailMessage.Id;
-
-                            _context.Conversations.Update(entity);
+                            emailEntityOfPrevEmail.InReply = IdOfTheNewEmail;
+                            _context.EmailMessages.Update(emailEntityOfPrevEmail);
                         }
+
+                        var entityOfListOfRequests = await _context.ListOfRequests
+                           .SingleOrDefaultAsync(i => i.ListOfRequestsID == currentRequestId);
+                        entityOfListOfRequests.TailOfConversation = IdOfTheNewEmail;
+
+                        _context.ListOfRequests.Update(entityOfListOfRequests);
+
+                        await _context.SaveChangesAsync();
+
                     }
                     else
                     {
-                        var entity = new Conversation
-                        {
-                            UsersConversation = "0" + emailMessage.Id.ToString()
-                        };
-
-                        _context.Conversations.Add(entity);
+                        return RedirectToAction("Home", "Privacy");
                     }
 
                     await _context.SaveChangesAsync();

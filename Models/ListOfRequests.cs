@@ -1,10 +1,18 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace HelpDeskWebSite.Models
 {
     public class ListOfRequests
     {
-        [Key]
-        public int HeadOfConversation {  get; set; }
+        [ForeignKey("EmailMessage")]
+        public int? ListOfRequestsID { get; set; }
+        public int HeadOfConversation { get; set; }
+        public int TailOfConversation { get; set; }
+
+        [JsonIgnore]
+        public virtual EmailMessage EmailMessage { get; set; }
+
     }
 }

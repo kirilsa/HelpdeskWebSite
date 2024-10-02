@@ -59,8 +59,11 @@ namespace HelpDeskWebSite.Data.Migrations
                     b.Property<string>("ContentIdMap")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTimeOffset>("Date")
+                    b.Property<DateTimeOffset?>("Date")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("EmailType")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("From")
                         .HasColumnType("nvarchar(max)");
@@ -78,6 +81,9 @@ namespace HelpDeskWebSite.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Signature")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StrippedHtml")
@@ -98,10 +104,6 @@ namespace HelpDeskWebSite.Data.Migrations
                     b.Property<string>("Token")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.ToTable("EmailMessages");
@@ -109,13 +111,16 @@ namespace HelpDeskWebSite.Data.Migrations
 
             modelBuilder.Entity("HelpDeskWebSite.Models.ListOfRequests", b =>
                 {
-                    b.Property<int>("HeadOfConversation")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int?>("ListOfRequestsID")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HeadOfConversation"), 1L, 1);
+                    b.Property<int>("HeadOfConversation")
+                        .HasColumnType("int");
 
-                    b.HasKey("HeadOfConversation");
+                    b.Property<int>("TailOfConversation")
+                        .HasColumnType("int");
+
+                    b.HasKey("ListOfRequestsID");
 
                     b.ToTable("ListOfRequests");
                 });
@@ -322,6 +327,17 @@ namespace HelpDeskWebSite.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("HelpDeskWebSite.Models.ListOfRequests", b =>
+                {
+                    b.HasOne("HelpDeskWebSite.Models.EmailMessage", "EmailMessage")
+                        .WithOne("listOfRequests")
+                        .HasForeignKey("HelpDeskWebSite.Models.ListOfRequests", "ListOfRequestsID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EmailMessage");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -371,6 +387,11 @@ namespace HelpDeskWebSite.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("HelpDeskWebSite.Models.EmailMessage", b =>
+                {
+                    b.Navigation("listOfRequests");
                 });
 #pragma warning restore 612, 618
         }

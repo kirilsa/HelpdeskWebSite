@@ -22,31 +22,21 @@ body {
     position: relative;
     padding: 0 0 0;
     margin-top: 10px;
-    width: 70%;
     margin: auto;
 }
 
 .form__field {
-    font-family: inherit;
     width: 100%;
     border: 0;
     border-bottom: 2px solid #888888;
     outline: 0;
-    font-size: 1.3rem;
     color: black;
     padding: 7px 0;
     background: transparent;
-    transition: border-color 0.2s;
 }
 
     .form__field::placeholder {
         color: transparent;
-    }
-
-    .form__field:placeholder-shown ~ .form__label {
-        font-size: 1.3rem;
-        cursor: text;
-        top: 20px;
     }
 
 .form__label {
@@ -60,7 +50,6 @@ body {
 
 .form__field:focus {
     padding-bottom: 6px;
-    font-weight: 700;
     border-width: 3px;
     border-image: linear-gradient(to right, #ff6347, #4682b4);
     border-image-slice: 1;
@@ -71,7 +60,6 @@ body {
         top: 0;
         display: block;
         transition: 0.2s;
-        font-size: 1rem;
         color: #ff6347;
     }
 

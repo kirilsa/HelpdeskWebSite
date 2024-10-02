@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 
 namespace HelpDeskWebSite.Models
@@ -57,6 +58,10 @@ namespace HelpDeskWebSite.Models
         [ModelBinder(Name = "Date")]
         public DateTimeOffset Date { get; set; }
         public int? InReply { get; set; } = null;
-        public string status { get; set; }
+        public string? Status { get; set; } = string.Empty;
+        public string? EmailType { get; set; } = string.Empty; // received, sent, note
+
+        [BindNever]
+        public virtual ListOfRequests? listOfRequests { get; set; }
     }
 }

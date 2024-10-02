@@ -2334,7 +2334,7 @@
           "lib/netstandard2.0/NuGet.Versioning.dll": {}
         }
       },
-      "RestSharp/111.4.1": {
+      "RestSharp/112.0.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/RestSharp.dll": {
@@ -7695,10 +7695,10 @@
         "nuget.versioning.nuspec"
       ]
     },
-    "RestSharp/111.4.1": {
-      "sha512": "MhrBdwqYd+ezd3xD+c6eaAVcLJoWI+2TBH7rqX149nbYRkPJJfK/UbrgJVfKN9ZMehOFzo2PmKIZjS1ATnxEAQ==",
+    "RestSharp/112.0.0": {
+      "sha512": "vezxJ6DLk0eDx+rmXwVHQvJ3elZCJfnLd8neRrkA+IvTs9falf2CEAolsjI1YKkkHTOvG13xWTnHK7gU0zgaaw==",
       "type": "package",
-      "path": "restsharp/111.4.1",
+      "path": "restsharp/112.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -7715,7 +7715,7 @@
         "lib/net8.0/RestSharp.xml",
         "lib/netstandard2.0/RestSharp.dll",
         "lib/netstandard2.0/RestSharp.xml",
-        "restsharp.111.4.1.nupkg.sha512",
+        "restsharp.112.0.0.nupkg.sha512",
         "restsharp.nuspec",
         "restsharp.png"
       ]
@@ -12042,7 +12042,7 @@
       "Microsoft.EntityFrameworkCore.Sqlite >= 6.0.32",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.32",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.17",
-      "RestSharp >= 111.4.1",
+      "RestSharp >= 112.0.0",
       "SendGrid >= 9.29.3"
     ]
   },
@@ -12131,7 +12131,7 @@
           },
           "RestSharp": {
             "target": "Package",
-            "version": "[111.4.1, )"
+            "version": "[112.0.0, )"
           },
           "SendGrid": {
             "target": "Package",
@@ -12157,7 +12157,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

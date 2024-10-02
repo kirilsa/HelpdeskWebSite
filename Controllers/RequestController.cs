@@ -9,6 +9,7 @@ using HelpDeskWebSite.Data;
 using HelpDeskWebSite.Models;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Humanizer;
+using System.Net.Mail;
 
 namespace HelpDeskWebSite.Controllers
 {
@@ -32,19 +33,35 @@ namespace HelpDeskWebSite.Controllers
         // GET: Request/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.EmailMessages == null)
+            var requests = await _context.ListOfRequests
+                .FirstOrDefaultAsync(m => m.ListOfRequestsID == id);
+
+            int? headRequest = requests.HeadOfConversation;
+
+            var usersConversation = new List<EmailMessage>();
+
+            if (requests == null)
             {
-                return NotFound();
+                return NotFound();//In development
+            }
+            else
+            {
+                while (headRequest != null)
+                {
+                    var current = await _context.EmailMessages.SingleOrDefaultAsync(i => i.Id == headRequest);
+
+                    headRequest = current.InReply;
+
+                    usersConversation.Add(current);
+
+                    if (current == null || current.InReply == null)
+                    {
+                        break;
+                    }
+                }
             }
 
-            var emailMessage = await _context.EmailMessages
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (emailMessage == null)
-            {
-                return NotFound();
-            }
-
-            return View(emailMessage);
+            return View(usersConversation);
         }
 
         // GET: Request/Create

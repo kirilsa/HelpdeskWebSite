@@ -1,0 +1,166 @@
+﻿@model IEnumerable<HelpDeskWebSite.Models.ListOfRequests>
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid square-main-background">
+    <div class="tool-bar">
+        <div class="box">something</div>
+        <div class="box">else</div>
+    </div>
+    <table id="resizeMe" class="table">
+        <thead>
+            <tr class="highlight-row">
+                <th>ID</th>
+                <th class="subject-column" >Subject</th>
+                <th class="message-column" >Message</th>
+                <th>Requester</th>
+                <th>Assigned to</th>
+                <th>Status</th>
+                <th>Created Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var index = 0;
+            }
+            @foreach (var item in Model)
+            {
+                <tr class="@(index % 2 == 0 ? "even" : "odd")">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HeadOfConversation)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Details", "Request", new { id = item.ListOfRequestsID })">@Html.DisplayFor(modelItem => item.EmailMessage.Subject)</a>
+                    </td>
+                    <td>@item.EmailMessage.BodyPlain</td>
+                    <td>
+                        @item.EmailMessage.Recipient
+                    </td>
+                    <td>Excited User</td>
+                    <td>In Development</td>
+                    <td class="original-datetime">@item.EmailMessage.Date.ToString("HH:mm dd-MM-yyyy")</td>
+                </tr>
+                index++;
+            }
+        </tbody>
+    </table>
+    fdsaf
+</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const createResizableTable = function (table) {
+                const cols = table.querySelectorAll('th');
+                [].forEach.call(cols, function (col) {
+                    // Add a resizer element to the column
+                    const resizer = document.createElement('div');
+                    resizer.classList.add('resizer');
+
+                    // Set the height
+                    resizer.style.height = table.offsetHeight + 'px';
+
+                    col.appendChild(resizer);
+
+                    createResizableColumn(col, resizer);
+                });
+            };
+
+            const createResizableColumn = function (col, resizer) {
+                let x = 0;
+                let w = 0;
+
+                const mouseDownHandler = function (e) {
+                    x = e.clientX;
+
+                    const styles = window.getComputedStyle(col);
+                    w = parseInt(styles.width, 10);
+
+                    document.addEventListener('mousemove', mouseMoveHandler);
+                    document.addEventListener('mouseup', mouseUpHandler);
+
+                    resizer.classList.add('resizing');
+                };
+
+                const mouseMoveHandler = function (e) {
+                    const dx = e.clientX - x;
+                    col.style.width = (w + dx) + 'px';
+                };
+
+                const mouseUpHandler = function () {
+                    resizer.classList.remove('resizing');
+                    document.removeEventListener('mousemove', mouseMoveHandler);
+                    document.removeEventListener('mouseup', mouseUpHandler);
+                };
+
+                resizer.addEventListener('mousedown', mouseDownHandler);
+            };
+
+            createResizableTable(document.getElementById('resizeMe'));
+        });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Select all cells containing the original datetime
+        const dateTimeCells = document.querySelectorAll(".original-datetime");
+
+        dateTimeCells.forEach(function (cell) {
+            // Get the original datetime text from the cell
+            let originalDateTime = cell.textContent.trim();
+
+            // Convert the ISO string into a Date object
+            let date = new Date(originalDateTime);
+
+            // Convert the Date object to the user's local time zone
+            let adjustedDateTime = date.toLocaleString();
+
+            // Update the corresponding cell with the adjusted datetime
+            let adjustedCell = cell.nextElementSibling;
+            adjustedCell.textContent = adjustedDateTime;
+        });
+    });
+    </script>
+
+    <style>
+    .table {
+        border-collapse: collapse;
+    }
+
+        .table,
+        .table th,
+        .table td {
+            border: 1px solid #ccc;
+        }
+
+            .table th,
+            .table td {
+                padding: 0.5rem;
+            }
+
+            .table th {
+                position: relative;
+            }
+
+    .resizer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 5px;
+        cursor: col-resize;
+        user-select: none;
+    }
+
+        .resizer:hover,
+        .resizing {
+            border-right: 2px solid blue;
+        }
+
+    .resizable {
+        border: 1px solid gray;
+        height: 100px;
+        width: 100px;
+        position: relative;
+    }
+    </style>
