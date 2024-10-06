@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\controllers\\listofrequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:controllers\\listofrequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\views\\listofrequests\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:views\\listofrequests\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|c:\\users\\user\\source\\repos\\helpdeskwebsite\\helpdeskwebsite\\views\\listofrequests\\index.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{C81E61A4-494D-44C0-880C-43A0678EE532}|HelpDeskWebSite.csproj|solutionrelative:views\\listofrequests\\index.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 197,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,45 +22,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ListOfRequestsController.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Controllers\\ListOfRequestsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ListOfRequestsController.cs",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Controllers\\ListOfRequestsController.cs",
-              "RelativeToolTip": "Controllers\\ListOfRequestsController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T22:27:22.053Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Views\\ListOfRequests\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\ListOfRequests\\Index.cshtml",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Views\\ListOfRequests\\Index.cshtml",
-              "RelativeToolTip": "Views\\ListOfRequests\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-01T22:18:20.266Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml.css",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Views\\ListOfRequests\\Index.cshtml.css",
-              "RelativeDocumentMoniker": "Views\\ListOfRequests\\Index.cshtml.css",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\Views\\ListOfRequests\\Index.cshtml.css",
-              "RelativeToolTip": "Views\\ListOfRequests\\Index.cshtml.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-01T22:39:21.054Z",
-              "EditorCaption": ""
             }
           ]
         },

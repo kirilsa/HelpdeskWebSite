@@ -25,9 +25,9 @@
     text-align: center;
 }
 
-    .signin-image p[b-6yn0s43lda] {
-        margin-top: 1.5rem;
-    }
+.create-account-p[b-6yn0s43lda] {
+    margin-top: 10px;
+}
 
 .login-box[b-6yn0s43lda] {
     float: right;
@@ -40,10 +40,8 @@ h1[b-6yn0s43lda] {
 }
 
 .checkbox[b-6yn0s43lda] {
-    max-width: 70%;
     margin: auto;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    width: 80%;
 }
 
 label[b-6yn0s43lda] {
@@ -53,6 +51,10 @@ label[b-6yn0s43lda] {
 button[b-6yn0s43lda] {
     margin-top: 8px;
     width: 70%;
+}
+
+.form__group[b-6yn0s43lda] {
+    width: 80%;
 }
 /* _content/HelpDeskWebSite/Areas/Identity/Pages/Account/Register.cshtml.rz.scp.css */
 .signup[b-qre8whpset] {
@@ -100,6 +102,14 @@ button[b-qre8whpset] {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
+.form__group[b-qre8whpset] {
+    width: 80%;
+}
+
+button[b-qre8whpset] {
+    margin-top: 30px;
+}
 /* _content/HelpDeskWebSite/Views/ListOfRequests/Index.cshtml.rz.scp.css */
 .tool-bar[b-1alh8hp3nc] {
     display: flex;
@@ -143,6 +153,51 @@ table[b-1alh8hp3nc] {
 }
 
 .highlight-row[b-1alh8hp3nc]{
+    background-color: aquamarine;
+}
+/* _content/HelpDeskWebSite/Views/ListOfRequests/Test.cshtml.rz.scp.css */
+.tool-bar[b-fxvdea441f] {
+    display: flex;
+    align-items: center;
+    background-color: #e6e0dc;
+    margin: 10px 0 10px 0;
+    padding: 10px;
+    border: 1px solid #2D2926;
+    border-radius: 10px;
+}
+
+
+td[b-fxvdea441f], th[b-fxvdea441f] {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px; /* Set a max-width as per your layout */
+}
+
+th[b-fxvdea441f] {
+    color: white;
+    background-color: #2D2926;
+}
+
+.odd td[b-fxvdea441f] {
+    background-color: #e6e0dc; /* White color for odd rows */
+}
+
+table[b-fxvdea441f] {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.subject-column[b-fxvdea441f] {
+    min-width: 250px;
+}
+
+.message-column[b-fxvdea441f] {
+    min-width: 400px;
+}
+
+.highlight-row[b-fxvdea441f] {
     background-color: aquamarine;
 }
 /* _content/HelpDeskWebSite/Views/Request/Details.cshtml.rz.scp.css */

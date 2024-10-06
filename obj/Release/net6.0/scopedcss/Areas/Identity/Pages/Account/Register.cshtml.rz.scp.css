@@ -43,3 +43,11 @@ button[b-qre8whpset] {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
+.form__group[b-qre8whpset] {
+    width: 80%;
+}
+
+button[b-qre8whpset] {
+    margin-top: 30px;
+}

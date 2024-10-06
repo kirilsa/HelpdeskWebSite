@@ -1,0 +1,44 @@
+﻿.tool-bar {
+    display: flex;
+    align-items: center;
+    background-color: #e6e0dc;
+    margin: 10px 0 10px 0;
+    padding: 10px;
+    border: 1px solid #2D2926;
+    border-radius: 10px;
+}
+
+
+td, th {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px; /* Set a max-width as per your layout */
+}
+
+th {
+    color: white;
+    background-color: #2D2926;
+}
+
+.odd td {
+    background-color: #e6e0dc; /* White color for odd rows */
+}
+
+table {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.subject-column {
+    min-width: 250px;
+}
+
+.message-column {
+    min-width: 400px;
+}
+
+.highlight-row {
+    background-color: aquamarine;
+}

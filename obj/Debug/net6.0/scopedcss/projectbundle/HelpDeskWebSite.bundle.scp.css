@@ -100,12 +100,97 @@ button[b-qre8whpset] {
   margin-top: 15px;
   margin-bottom: 15px;
 }
-/* _content/HelpDeskWebSite/Views/Request/Details.cshtml.rz.scp.css */
-.square-main-background[b-631j2yxniw] {
-    margin: 10px;
-    width: calc(100% - 20px);
+/* _content/HelpDeskWebSite/Views/ListOfRequests/Index.cshtml.rz.scp.css */
+.tool-bar[b-1alh8hp3nc] {
+    display: flex;
+    align-items: center;
+    background-color: #e6e0dc;
+    margin: 10px 0 10px 0;
+    padding: 10px;
+    border: 1px solid #2D2926;
+    border-radius: 10px;
 }
 
+
+td[b-1alh8hp3nc], th[b-1alh8hp3nc] {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px; /* Set a max-width as per your layout */
+}
+
+th[b-1alh8hp3nc] {
+    color: white;
+    background-color: #2D2926;
+}
+
+.odd td[b-1alh8hp3nc] {
+    background-color: #e6e0dc; /* White color for odd rows */
+}
+
+table[b-1alh8hp3nc] {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.subject-column[b-1alh8hp3nc]{
+    min-width: 250px;
+}
+
+.message-column[b-1alh8hp3nc] {
+    min-width: 400px;
+}
+
+.highlight-row[b-1alh8hp3nc]{
+    background-color: aquamarine;
+}
+/* _content/HelpDeskWebSite/Views/ListOfRequests/Test.cshtml.rz.scp.css */
+.tool-bar[b-fxvdea441f] {
+    display: flex;
+    align-items: center;
+    background-color: #e6e0dc;
+    margin: 10px 0 10px 0;
+    padding: 10px;
+    border: 1px solid #2D2926;
+    border-radius: 10px;
+}
+
+
+td[b-fxvdea441f], th[b-fxvdea441f] {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px; /* Set a max-width as per your layout */
+}
+
+th[b-fxvdea441f] {
+    color: white;
+    background-color: #2D2926;
+}
+
+.odd td[b-fxvdea441f] {
+    background-color: #e6e0dc; /* White color for odd rows */
+}
+
+table[b-fxvdea441f] {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.subject-column[b-fxvdea441f] {
+    min-width: 250px;
+}
+
+.message-column[b-fxvdea441f] {
+    min-width: 400px;
+}
+
+.highlight-row[b-fxvdea441f] {
+    background-color: aquamarine;
+}
+/* _content/HelpDeskWebSite/Views/Request/Details.cshtml.rz.scp.css */
 .border-main-background[b-631j2yxniw] {
     padding: 1px;
     background-color: #f0f0f0;

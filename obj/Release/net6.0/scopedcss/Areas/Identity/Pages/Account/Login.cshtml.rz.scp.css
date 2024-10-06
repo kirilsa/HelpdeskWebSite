@@ -24,9 +24,9 @@
     text-align: center;
 }
 
-    .signin-image p[b-6yn0s43lda] {
-        margin-top: 1.5rem;
-    }
+.create-account-p[b-6yn0s43lda] {
+    margin-top: 10px;
+}
 
 .login-box[b-6yn0s43lda] {
     float: right;
@@ -39,10 +39,8 @@ h1[b-6yn0s43lda] {
 }
 
 .checkbox[b-6yn0s43lda] {
-    max-width: 70%;
     margin: auto;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    width: 80%;
 }
 
 label[b-6yn0s43lda] {
@@ -52,4 +50,8 @@ label[b-6yn0s43lda] {
 button[b-6yn0s43lda] {
     margin-top: 8px;
     width: 70%;
+}
+
+.form__group[b-6yn0s43lda] {
+    width: 80%;
 }

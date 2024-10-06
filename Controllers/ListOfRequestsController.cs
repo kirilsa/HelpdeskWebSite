@@ -37,6 +37,28 @@ namespace HelpDeskWebSite.Controllers
             //return View(null);
         }
 
+        public async Task<IActionResult> Test(int pageIndex = 1, int itemsPerPage = 10)
+        {
+            int totalItems = await _context.ListOfRequests.CountAsync();
+
+            var paginatedData = await _context.ListOfRequests
+            .Include(r => r.EmailMessage)  // Include related EmailMessage entity
+            .Skip((pageIndex - 1) * itemsPerPage)  // Skip previous pages
+            .Take(itemsPerPage)  // Take only the items for the current page
+            .ToListAsync();  // Fetch the data asynchronously*/
+
+            int totalPages = (int)Math.Ceiling((double)totalItems / itemsPerPage);
+
+            var viewModel = new PaginatedViewModel
+            {
+                Data = paginatedData,
+                CurrentPage = pageIndex,
+                TotalPages = totalPages
+            };
+
+            return View(viewModel);
+        }
+
         // GET: ListOfRequests/Details/5
         public async Task<IActionResult> Details(int? id)
         {

@@ -310,3 +310,4 @@ C:\Users\USER\source\repos\HelpDeskWebSite\HelpDeskWebSite\obj\Release\net6.0\He
 C:\Users\USER\source\repos\HelpDeskWebSite\HelpDeskWebSite\bin\Release\net6.0\RestSharp.dll
 C:\Users\USER\source\repos\HelpDeskWebSite\HelpDeskWebSite\obj\Release\net6.0\scopedcss\Views\Request\Details.cshtml.rz.scp.css
 C:\Users\USER\source\repos\HelpDeskWebSite\HelpDeskWebSite\obj\Release\net6.0\scopedcss\Views\ListOfRequests\Index.cshtml.rz.scp.css
+C:\Users\USER\source\repos\HelpDeskWebSite\HelpDeskWebSite\obj\Release\net6.0\scopedcss\Views\ListOfRequests\Test.cshtml.rz.scp.css

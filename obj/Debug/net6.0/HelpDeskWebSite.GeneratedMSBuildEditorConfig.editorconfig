@@ -58,8 +58,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/source/repos/HelpDeskWebSite/HelpDeskWebSite/Views/ListOfRequests/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlzdE9mUmVxdWVzdHNcSW5kZXguY3NodG1s
+[C:/Users/USER/source/repos/HelpDeskWebSite/HelpDeskWebSite/Views/Home/Test.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/USER/source/repos/HelpDeskWebSite/HelpDeskWebSite/Views/Request/Create.cshtml]
@@ -113,6 +113,14 @@ build_metadata.AdditionalFiles.CssScope = b-6yn0s43lda
 [C:/Users/USER/source/repos/HelpDeskWebSite/HelpDeskWebSite/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-qre8whpset
+
+[C:/Users/USER/source/repos/HelpDeskWebSite/HelpDeskWebSite/Views/ListOfRequests/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlzdE9mUmVxdWVzdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-1alh8hp3nc
+
+[C:/Users/USER/source/repos/HelpDeskWebSite/HelpDeskWebSite/Views/ListOfRequests/Test.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlzdE9mUmVxdWVzdHNcVGVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-fxvdea441f
 
 [C:/Users/USER/source/repos/HelpDeskWebSite/HelpDeskWebSite/Views/Request/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdFxEZXRhaWxzLmNzaHRtbA==

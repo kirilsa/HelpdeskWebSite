@@ -1,0 +1,44 @@
+.tool-bar[b-fxvdea441f] {
+    display: flex;
+    align-items: center;
+    background-color: #e6e0dc;
+    margin: 10px 0 10px 0;
+    padding: 10px;
+    border: 1px solid #2D2926;
+    border-radius: 10px;
+}
+
+
+td[b-fxvdea441f], th[b-fxvdea441f] {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px; /* Set a max-width as per your layout */
+}
+
+th[b-fxvdea441f] {
+    color: white;
+    background-color: #2D2926;
+}
+
+.odd td[b-fxvdea441f] {
+    background-color: #e6e0dc; /* White color for odd rows */
+}
+
+table[b-fxvdea441f] {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.subject-column[b-fxvdea441f] {
+    min-width: 250px;
+}
+
+.message-column[b-fxvdea441f] {
+    min-width: 400px;
+}
+
+.highlight-row[b-fxvdea441f] {
+    background-color: aquamarine;
+}

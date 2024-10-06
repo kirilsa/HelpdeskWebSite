@@ -2,23 +2,23 @@
 @model LoginModel
 
 @{
-    ViewData["Title"] = "Sing up";
+    ViewData["Title"] = "Log in";
 }
 
 <div class="sign-in">
     <div class="signin-content">
         <div class="signin-image">
             <img src="~/image/signup-image.jpg" alt="sing up image">
+            <p class="create-account-p">
+                <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Create account</a>
+            </p>
             <p>
-                <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">
-                    Create
-                    account
-                </a>
+                <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
             </p>
         </div>
         <div class="login-box">
             <h1>Login</h1>
-            <form class="register-form" id="login-form">
+            <form class="register-form" id="account" method="post">
                 <div class="form__group field">
                     <input asp-for="Input.Email" class="form__field" />
                     <label asp-for="Input.Email"></label>
@@ -31,16 +31,15 @@
                     <span asp-validation-for="Input.Password"></span>
                 </div>
                 <div class="checkbox">
-                    <label asp-for="Input.RememberMe" class="form-label">
-                        <input class="form-check-input" asp-for="Input.RememberMe" />
-                        @Html.DisplayNameFor(m => m.Input.RememberMe)
-                    </label>
+                    <div style="margin: 15px 0 15px 0">
+                        <label asp-for="Input.RememberMe" class="form-label">
+                            <input class="form-check-input" asp-for="Input.RememberMe" />
+                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                        </label>
+                    </div>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="w-75 btn btn-lg btn-primary" asp-area="MicrosoftIdentity"
-                            asp-controller="Account" asp-action="SignIn">
-                        Sing-In
-                    </button>
+                    <button type="submit" class="w-75 btn btn-lg btn-primary">Sing-In</button>
                 </div>
             </form>
         </div>

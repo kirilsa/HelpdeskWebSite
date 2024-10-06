@@ -24,9 +24,9 @@
     text-align: center;
 }
 
-    .signin-image p {
-        margin-top: 1.5rem;
-    }
+.create-account-p {
+    margin-top: 10px;
+}
 
 .login-box {
     float: right;
@@ -39,10 +39,8 @@ h1 {
 }
 
 .checkbox {
-    max-width: 70%;
     margin: auto;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    width: 80%;
 }
 
 label {
@@ -52,4 +50,8 @@ label {
 button {
     margin-top: 8px;
     width: 70%;
+}
+
+.form__group {
+    width: 80%;
 }

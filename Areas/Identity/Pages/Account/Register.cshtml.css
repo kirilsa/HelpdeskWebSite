@@ -43,3 +43,11 @@ button {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
+.form__group {
+    width: 80%;
+}
+
+button {
+    margin-top: 30px;
+}
