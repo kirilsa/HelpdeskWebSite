@@ -13,6 +13,22 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\wwwroot\\image\\5296499_fb_facebook_facebook logo_icon.png",
+      "PackagePath": "staticwebassets\\image\\5296499_fb_facebook_facebook logo_icon.png"
+    },
+    {
+      "Id": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\wwwroot\\image\\5296501_linkedin_network_linkedin logo_icon.png",
+      "PackagePath": "staticwebassets\\image\\5296501_linkedin_network_linkedin logo_icon.png"
+    },
+    {
+      "Id": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\wwwroot\\image\\5296516_tweet_twitter_twitter logo_icon.svg",
+      "PackagePath": "staticwebassets\\image\\5296516_tweet_twitter_twitter logo_icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\wwwroot\\image\\5296520_bubble_chat_mobile_whatsapp_whatsapp logo_icon.png",
+      "PackagePath": "staticwebassets\\image\\5296520_bubble_chat_mobile_whatsapp_whatsapp logo_icon.png"
+    },
+    {
       "Id": "C:\\Users\\USER\\source\\repos\\HelpDeskWebSite\\HelpDeskWebSite\\wwwroot\\image\\logo.png",
       "PackagePath": "staticwebassets\\image\\logo.png"
     },

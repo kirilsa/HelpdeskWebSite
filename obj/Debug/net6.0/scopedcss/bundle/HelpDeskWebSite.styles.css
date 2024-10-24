@@ -25,9 +25,9 @@
     text-align: center;
 }
 
-    .signin-image p[b-6yn0s43lda] {
-        margin-top: 1.5rem;
-    }
+.create-account-p[b-6yn0s43lda] {
+    margin-top: 10px;
+}
 
 .login-box[b-6yn0s43lda] {
     float: right;
@@ -40,10 +40,8 @@ h1[b-6yn0s43lda] {
 }
 
 .checkbox[b-6yn0s43lda] {
-    max-width: 70%;
     margin: auto;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    width: 80%;
 }
 
 label[b-6yn0s43lda] {
@@ -53,6 +51,10 @@ label[b-6yn0s43lda] {
 button[b-6yn0s43lda] {
     margin-top: 8px;
     width: 70%;
+}
+
+.form__group[b-6yn0s43lda] {
+    width: 80%;
 }
 /* _content/HelpDeskWebSite/Areas/Identity/Pages/Account/Register.cshtml.rz.scp.css */
 .signup[b-qre8whpset] {
@@ -99,6 +101,14 @@ h1[b-qre8whpset] {
 button[b-qre8whpset] {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+.form__group[b-qre8whpset] {
+    width: 80%;
+}
+
+button[b-qre8whpset] {
+    margin-top: 30px;
 }
 /* _content/HelpDeskWebSite/Views/ListOfRequests/Index.cshtml.rz.scp.css */
 .tool-bar[b-1alh8hp3nc] {
@@ -341,11 +351,11 @@ strong[b-631j2yxniw] {
 }
 
 .bg-green[b-631j2yxniw] {
-    background-color: #d4ff97;
+    background-color: #559d66;
 }
 
 .bg-red[b-631j2yxniw] {
-    background-color: #fcb5b5;
+    background-color: #a9cc76;
 }
 
 .error[b-631j2yxniw]{
@@ -353,16 +363,52 @@ strong[b-631j2yxniw] {
 }
 
 button[b-631j2yxniw]{
-    background-color: #fefabc;
+    background-color: #ccc;
 }
 
 .ticket-info-box[b-631j2yxniw] {
     overflow: hidden;
 }
-    
+
 table[b-631j2yxniw] {
     border-collapse: collapse;
 }
+
+/* List of the requsts in the left menu */
+
+.request-topic[b-631j2yxniw] {
+    background-color: white;
+    border: 0;
+    border-radius: 3px;
+}
+
+.request-box[b-631j2yxniw] {
+    background-color: white;
+    margin: 2px 0 2px 0;
+    /*padding: 2px 2px 2px 5px;*/
+    border: 1px solid #2D2926;
+    border-radius: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+}
+
+.subject-requstBox[b-631j2yxniw] {
+    display: block;
+    width: 100%;
+    background-color: #8dc3d4;
+}
+
+.additional-info-requstBox li[b-631j2yxniw] {
+    list-style-type: circle;
+}
+
+ul[b-631j2yxniw] {
+    margin: 0;
+}
+
+
 /* _content/HelpDeskWebSite/Views/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
@@ -406,9 +452,6 @@ button.accept-policy[b-kvsfdz2zou] {
 }
 
 .footer[b-kvsfdz2zou] {
-  position: absolute;
   bottom: 0;
   width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
 }

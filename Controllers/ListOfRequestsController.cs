@@ -22,23 +22,14 @@ namespace HelpDeskWebSite.Controllers
                         Problem("Entity set 'ApplicationDbContext.ListOfRequests'  is null.");
         }*/
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageIndex = 1, int itemsPerPage = 10)
         {
-            var request = await _context.ListOfRequests
+            /*var request = await _context.ListOfRequests
                 .Include(r => r.EmailMessage)
                 .ToListAsync();
 
-            return View(request);
-            // Fetch all requests along with related conversation data (HeadOfConversation)
-            /*var requests = await _context.ListOfRequests
-                .Include(r => r.HeadEmailMessage) // Eagerly load the related conversation data
-                .ToListAsync();*/
+            return View(request);*/
 
-            //return View(null);
-        }
-
-        public async Task<IActionResult> Test(int pageIndex = 1, int itemsPerPage = 10)
-        {
             int totalItems = await _context.ListOfRequests.CountAsync();
 
             var paginatedData = await _context.ListOfRequests
@@ -57,6 +48,15 @@ namespace HelpDeskWebSite.Controllers
             };
 
             return View(viewModel);
+        }
+
+        public async Task<IActionResult> Test()
+        {
+            var request = await _context.ListOfRequests
+                            .Include(r => r.EmailMessage)
+                            .ToListAsync();
+
+            return View(request);
         }
 
         // GET: ListOfRequests/Details/5

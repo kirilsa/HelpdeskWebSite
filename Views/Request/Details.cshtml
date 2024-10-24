@@ -1,6 +1,7 @@
 ﻿@using System.Web
-@* @model HelpDeskWebSite.Models.EmailMessage *@
-@model List<EmailMessage>
+@* @Model.emailMessages HelpDeskWebSite.Models.EmailMessage *@
+@* Model.emailMessages List<EmailMessage> *@
+@model ListOfRequestsAndRequest
 
 @{
     ViewData["Title"] = "Details";
@@ -8,319 +9,472 @@
 }
 
 <div class="container-fluid square-main-background">
-  <div class="row border-main-background">
-          <div class="col-xl-2" style="background-color: #E5E5E5">
-              In Development
-          </div>
+    <div class="row border-main-background">
+        <div class="col-xl-2" style="background-color: #E5E5E5">
 
-      <div class="col-xl-7 bg-white">
-          <div class="container">
-              <div class="row p-3">
-                  <h2>@Model[0].Subject</h2>
-              </div>
+            <div class="request-topic mt-1">
+                <h5 class="text-center p-1">Last 10 requests</h5>
+            </div>
 
-              <!-- Nav tabs -->
-              <ul class="nav nav-tabs" role="tablist">
-                  <li class="nav-item">
-                      <a class="nav-link active" data-toggle="tab" href="#home">Details</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#menu1">Resolution</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#menu2">History</a>
-                  </li>
-              </ul>
+            @foreach (var request in Model.Data)
+            {
+                <div class="request-box">
+                    <span class="subject-requstBox">@request.EmailMessage.Subject</span>
 
-              <!-- Tab panes -->
-              <div class="tab-content pt-2">
-                  <div id="home" class="container tab-pane active p-0">
-                      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                          <div class="panel panel-default">
-                              <div class="panel-heading d-flex justify-content-between align-items-center bg-green" role="tab" id="headingOne">
-                                  <h5 class="panel-title">
-                                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                @Model[0].From
-                                      </a>
-                                  </h5>
-                                  <div class="ml-auto" style="margin-right: 35px;">
-                                      <!-- Reply Button -->
-                                      <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
-                                          <i class="bi bi-reply"></i> Reply
-                                      </button>
-
-                                      <div class="offcanvas offcanvas-start bg-secondary" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-                                          <div class="offcanvas-header d-flex justify-content-center align-items-center">
-                                              <h5 class="offcanvas-title mx-auto" id="offcanvasScrollingLabel">Send an email: </h5>
-                                              <button type="button" class="btn-close ms-0" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                          </div>
-                                          <div class="offcanvas-body">
-                                              <form method="post" action="/EmailMailgun/SendEmail" onsubmit="return prepareFirstFormData();">
-                                                  <div class="form__group field">
-                                                      <label class="mt-2" for="toField">To:</label>
-                                                      <div class="editable form__field" id="toField" contenteditable="true">
-                                                                @Html.Raw(Model[0].Sender)
-                                                      </div>
-                                                      <input type="hidden" id="toFieldHidden" name="To" />
-                                                      <span class="text-danger"></span>
-                                                  </div>
-                                                  <div class="form__group field">
-                                                      <label>Subject</label>
-                                                      <div class="editable form__field" contenteditable="true">
-                                                                @Html.Raw(Model[0].Subject)
-                                                      </div>
-                                                      <input type="hidden" id="subjectFieldHidden" name="Subject" />
-
-                                                      <h3 id="subjectFieldHidden"> </h3>
-                                                      <span class="text-danger"></span>
-                                                  </div>
-                                                  <div class="form__group field">
-                                                      <label class="mt-2" for="textField">Message:</label>
-                                                      <div class="editable form__field" id="textField" contenteditable="true">
-                                                                @Html.Raw(Model[0].StrippedHtml)
-                                                      </div>
-                                                      <input type="hidden" id="textFieldHidden" name="Text" />
-                                                      <span class="text-danger"></span>
-                                                      <div class="d-flex justify-content-center align-items-center">
-                                                          <button type="submit" class="btn btn-outline-dark btn-sm ms-auto me-0 mt-1">Send Email</button>
-                                                      </div>
-                                                  </div>
-                                              </form>
-                                          </div>
-
-                                          <script>
-                                              function prepareFirstFormData() {
-                                                  // Get content from the editable divs
-                                                  var toField = document.getElementById('toField').innerText.trim();
-                                                  var subjectField = document.getElementById('subjectField').innerText.trim();
-                                                  var textField = document.getElementById('textField').innerText.trim();
-
-                                                  // Set the value of hidden inputs
-                                                  document.getElementById('toFieldHidden').value = toField;
-                                                  document.getElementById('subjectFieldHidden').value = subjectField;
-                                                  document.getElementById('textFieldHidden').value = textField;
-
-                                                  // Proceed with form submission
-                                                  return true;
-                                              }
-                                          </script>
-
-                                      </div>
-
-                                      <!-- Forward Button -->
-                                      <button type="button" class="btn btn-outline-secondary btn-sm">
-                                          <i class="bi bi-forward"></i> Forward
-                                      </button>
-                                  </div>
-                              </div>
-                              <div id="collapseOne" class="panel-collapse collapse in show" role="tabpanel" aria-labelledby="headingOne">
-                                  <div class="panel-body">
-                                            @Html.Raw(Model[0].StrippedHtml)
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="panel-group conversation" id="accordion" role="tablist" aria-multiselectable="true">
-                                @for (int i = Model.Count - 1; i > 0; i--)
-                                {
-                                    var panelId = $"collapse{i}"; // ID for each panel
-                                    var headingId = $"heading{i}"; // ID for each heading
-                                    var subjectBackgroundcolor = Model[i].EmailType == "sent" ? "bg-green" : Model[i].EmailType == "received" ? "bg-red" : "error";
-
-                                          <div class="panel panel-default conversation">
-                                              <div class="panel-heading d-flex justify-content-between align-items-center conversation @subjectBackgroundcolor" role="tab" id="@headingId">
-                                                  <h5 class="panel-title">
-                                                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#@panelId" aria-expanded="@(i == Model.Count - 1 ? true : false)" aria-controls="@panelId">
-                                                    @Model[i].From
-                                                      </a>
-                                                  </h5>
-                                                  <div class="ml-auto" style="margin-right: 35px;">
-                                                      <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-@Model[i].Id" aria-controls="offcanvas-@Model[i].Id">
-                                                          <i class="bi bi-reply"></i> Reply
-                                                      </button>
-
-                                                      <div class="offcanvas offcanvas-start bg-secondary" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvas-@Model[i].Id" aria-labelledby="offcanvasLabel-@Model[i].Id">
-                                                          <div class="offcanvas-header">
-                                                              <h5 class="offcanvas-title mx-auto" id="offcanvasLabel-@Model[i].Id">Send an email:</h5>
-                                                              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                                          </div>
-                                                          <div class="offcanvas-body">
-                                                              <form class="reply-form" method="post" action="/EmailMailgun/SendEmail" onsubmit="return prepareFormData(@i);">
-                                                                  <div class="form__group field">
-                                                                      <label class="mt-2" for="toField_@i">To:</label>
-                                                                      <div class="editable form__field" id="toField_@i" contenteditable="true">
-                                                                    @Model[i].Sender
-                                                                      </div>
-                                                                      <input type="hidden" id="toFieldHidden_@i" name="To" />
-                                                                  </div>
-
-                                                                  <div class="form__group field">
-                                                                      <label class="mt-2" for="subjectField_@i">Subject:</label>
-                                                                      <div class="editable form__field" id="subjectField_@i" contenteditable="true">
-                                                                    @Model[i].Subject
-                                                                      </div>
-                                                                      <input type="hidden" id="subjectFieldHidden_@i" name="Subject" />
-                                                                  </div>
-
-                                                                  <div class="form__group field">
-                                                                      <label class="mt-2" for="textField_@i">Text:</label>
-                                                                      <div class="editable form__field" id="textField_@i" contenteditable="true">
-                                                                    @Html.Raw(Model[i].StrippedHtml)
-                                                                      </div>
-                                                                      <input type="hidden" id="textFieldHidden_@i" name="Text" />
-                                                                  </div>
-
-                                                                  <div class="d-flex justify-content-center align-items-center">
-                                                                      <button type="submit" class="btn btn-outline-dark btn-sm ms-auto me-0 mt-1">Send Email</button>
-                                                                  </div>
-                                                              </form>
-                                                          </div>
-                                                      </div>
-                                                      <!-- Forward Button -->
-                                                      <button type="button" class="btn btn-outline-secondary btn-sm">
-                                                          <i class="bi bi-forward"></i> Forward
-                                                      </button>
-                                                  </div>
-                                              </div>
-                                              <div id="@panelId" class="panel-collapse collapse @(i == Model.Count - 1 ? "in" : "") @(i == Model.Count - 1 ? "show" : "")" role="tabpanel" aria-labelledby="@headingId">
-                                                  <div class="panel-body" id="subjectField">
-                                                @Html.Raw(Model[i].StrippedHtml)
-                                                  </div>
-                                              </div>
-                                          </div>
-                                          <script>
-                                              function prepareFormData(index) {
-                                                  // Get the 'To' field and hidden input
-                                                  var toField = document.getElementById('toField_' + index);
-                                                  var toFieldHidden = document.getElementById('toFieldHidden_' + index);
-                                                  if (toField && toFieldHidden) {
-                                                      toFieldHidden.value = toField.innerText.trim(); // or .textContent
-                                                  }
-
-                                                  // Get the 'Subject' field and hidden input
-                                                  var subjectField = document.getElementById('subjectField_' + index);
-                                                  var subjectFieldHidden = document.getElementById('subjectFieldHidden_' + index);
-                                                  if (subjectField && subjectFieldHidden) {
-                                                      subjectFieldHidden.value = subjectField.innerText.trim(); // or .textContent
-                                                  }
-
-                                                  // Get the 'Text' field and hidden input
-                                                  var textField = document.getElementById('textField_' + index);
-                                                  var textFieldHidden = document.getElementById('textFieldHidden_' + index);
-                                                  if (textField && textFieldHidden) {
-                                                      textFieldHidden.value = textField.innerText.trim(); // or .textContent
-                                                  }
-
-                                                  return true; // Or perform further validations and return false if needed
-                                              }
-                                          </script>
-                                }
-                      </div>
-                  </div>
-                  <div id="menu1" class="container tab-pane fade">
-                      <br>
-                      <h3>Menu 1</h3>
-                      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                  </div>
-                  <div id="menu2" class="container tab-pane fade">
-                      <br>
-                      <h3>Menu 2</h3>
-                      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="col-xl-3 ticket-info-box" style="background-color: #E5E5E5">
-          <h4 class="text-center p-2">Ticket Info</h4>
-          <table class="table table-borderless table-light table-no-top-border">
-              <tbody>
-                  <tr>
-                      <td class="fw-bold">Status:</td>
-                      <td>In Development</td>
-                  </tr>
-                  <tr>
-                      <td>Requester:</td>
-                      <td>
-                                @foreach (var item in Model[0].From)
-                                {
-                                    if (item == '<')
-                                    {
-                                        break; // Stops the loop if the item is '<'
-                                    }
-                                    else
-                                    {
-                                        @Html.DisplayFor(m => item)
-                                    }
-                                }
-                      </td>
-                  </tr>
-                  <tr>
-                      <td>Requested at:</td>
-
-                      <td>@Model[0].Date.ToString("dd/MM/yyyy HH:mm")</td>
-                  </tr>
-                  <tr>
-                      <td>Email:</td>
-                      <td>@Model[0].From</td>
-                  </tr>
-                  <tr>
-                      <td>Group:</td>
-                      <td>In Development</td>
-                  </tr>
-                  <tr>
-                      <td>Technician:</td>
-                      <td>In Development</td>
-                  </tr>
-              </tbody>
-          </table>
-      </div>
-  </div>
-</div>
-@*     <script>
-        function openOffcanvas(button) {
-            var index = button.getAttribute('data-index');
-            document.getElementById('offcanvas-content').textContent = 'Value: ' + index;
-
-            var offcanvas = new bootstrap.Offcanvas(document.getElementById('myOffcanvas'));
-            offcanvas.show();
-        }
-    </script> *@
-
-@*     <script>
-        function prepareFormData() {
-            // Get content from the editable divs
-            var toField = document.getElementById('toField').innerText.trim();
-            var subjectField = document.getElementById('subjectField').innerText.trim();
-            var textField = document.getElementById('textField').innerText.trim();
-
-            // Set the value of hidden inputs
-            document.getElementById('toFieldHidden').value = toField;
-            document.getElementById('subjectFieldHidden').value = subjectField;
-            document.getElementById('textFieldHidden').value = textField;
-
-            // Proceed with form submission
-            return true;
-        }
-    </script> *@
-@*     <script>
-            function prepareFormData() {
-                // Get content from the 'toField' div
-                var toField = document.getElementById('toField').innerText.trim();
-                document.getElementById('toFieldHidden').value = toField;
-
-                // Get content from the 'subjectField' div
-                var subjectFieldContent = document.getElementById('subjectField').innerText.trim();
-
-                // Set the content into a hidden input field
-                document.getElementById('subjectFieldHidden').value = subjectFieldContent;
-
-                // Alternatively, display the content in another div
-                document.getElementById('displayDiver').innerText = subjectFieldContent;
-
-                // For debugging or checking the values in the console
-                console.log("To Field: ", toField);
-                console.log("Subject Field Content: ", subjectFieldContent);
-
-                return true; // Form submission can proceed if applicable
+                    <ul class="additional-info-requstBox">
+                        <li>@request.EmailMessage.Date.ToString("HH:mm dd-MM-yyyy")</li>
+                        <li>@request.EmailMessage.Sender</li>
+                    </ul>
+                </div>
             }
-    </script> *@
+
+        </div>
+
+        <div class="col-xl-7 bg-white">
+            <div class="container">
+                <div class="row p-3">
+                    <h2>@Model.emailMessages[0].Subject</h2>
+                </div>
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#home">Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#resolution">Resolution</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#historyOfRequest">History</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content pt-2">
+                    <div id="home" class="container tab-pane active p-0">
+                        <!-- Email Header -->
+                        <div class="card position-relative">
+                            <div class="clickable-area" data-bs-toggle="collapse" data-bs-target="#emailBody" aria-expanded="true" aria-controls="emailBody"></div>
+
+                            <div class="card-header sentColour" id="emailHeader">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        @Model.emailMessages[0].From
+                                    </div>
+                                    <div class="ml-auto" style="margin-right: 15px;">
+                                        <!-- Reply Button -->
+                                        <button class="btn btn-outline-dark btn-sm header-content" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                                            <i class="bi bi-reply"></i> Reply
+                                        </button>
+
+                                        <div class="offcanvas offcanvas-start bg-secondary" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                                            <div class="offcanvas-header d-flex justify-content-center align-items-center">
+                                                <h5 class="offcanvas-title mx-auto" id="offcanvasScrollingLabel">Send an email: </h5>
+                                                <button type="button" class="btn-close ms-0" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                            </div>
+                                            <div class="offcanvas-body">
+
+                                                <form class="reply-form" method="post" action="/EmailMailgun/SendEmail" onsubmit="return prepareFirstFormData();">
+                                                    <div class="form__group field">
+                                                        <label class="mt-2" for="toField">To:</label>
+                                                        <div class="editable form__field" id="toField" contenteditable="true">
+                                                            @Model.emailMessages[0].Sender
+                                                        </div>
+                                                        <input type="hidden" id="toFieldHidden" name="To" />
+                                                    </div>
+
+                                                    <div class="form__group field">
+                                                        <label class="mt-2" for="subjectField">Subject:</label>
+                                                        <div class="editable form__field" id="subjectField" contenteditable="true">
+                                                            @Model.emailMessages[0].Subject
+                                                        </div>
+                                                        <input type="hidden" id="subjectFieldHidden" name="Subject" />
+                                                    </div>
+
+                                                    <div class="form__group field">
+                                                        <label class="mt-2" for="textField">Text:</label>
+                                                        <div class="editable form__field" id="textField" contenteditable="true">
+                                                            @Html.Raw(Model.emailMessages[0].StrippedHtml)
+                                                        </div>
+                                                        <input type="hidden" id="textFieldHidden" name="Text" />
+                                                    </div>
+
+                                                    <div class="d-flex justify-content-center align-items-center">
+                                                        <button type="submit" class="btn btn-outline-dark btn-sm ms-auto me-0 mt-1">Send Email</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <!-- Forward Button -->
+                                        <button type="button" class="btn btn-outline-secondary btn-sm">
+                                            <i class="bi bi-forward"></i> Forward
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Collapsible Body -->
+                            <div id="emailBody" class="collapse show" aria-labelledby="emailHeader">
+                                <div class="card-body">
+                                    @Html.Raw(Model.emailMessages[0].StrippedHtml)
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            function prepareFirstFormData() {
+                                // Get content from the editable divs
+                                var toField = document.getElementById('toField').innerText.trim();
+                                var subjectField = document.getElementById('subjectField').innerText.trim();
+                                var textField = document.getElementById('textField').innerText.trim();
+
+                                // Set the value of hidden inputs
+                                document.getElementById('toFieldHidden').value = toField;
+                                document.getElementById('subjectFieldHidden').value = subjectField;
+                                document.getElementById('textFieldHidden').value = textField;
+
+                                // Proceed with form submission
+                                return true;
+                            }
+                        </script>
+
+                        @* <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                        <div class="panel-heading d-flex justify-content-between align-items-center bg-green" role="tab" id="headingOne">
+                        <h5 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        @Model[0].From
+                        </a>
+                        </h5>
+                        <div class="ml-auto" style="margin-right: 35px;">
+                        <!-- Reply Button -->
+                        <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                        <i class="bi bi-reply"></i> Reply
+                        </button>
+
+                        <div class="offcanvas offcanvas-start bg-secondary" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                        <div class="offcanvas-header d-flex justify-content-center align-items-center">
+                        <h5 class="offcanvas-title mx-auto" id="offcanvasScrollingLabel">Send an email: </h5>
+                        <button type="button" class="btn-close ms-0" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+
+                        <form class="reply-form" method="post" action="/EmailMailgun/SendEmail" onsubmit="return prepareFirstFormData();">
+                        <div class="form__group field">
+                        <label class="mt-2" for="toField">To:</label>
+                        <div class="editable form__field" id="toField" contenteditable="true">
+                        @Model.emailMessages[0].Sender
+                        </div>
+                        <input type="hidden" id="toFieldHidden" name="To" />
+                        </div>
+
+                        <div class="form__group field">
+                        <label class="mt-2" for="subjectField">Subject:</label>
+                        <div class="editable form__field" id="subjectField" contenteditable="true">
+                        @Model.emailMessages[0].Subject
+                        </div>
+                        <input type="hidden" id="subjectFieldHidden" name="Subject" />
+                        </div>
+
+                        <div class="form__group field">
+                        <label class="mt-2" for="textField">Text:</label>
+                        <div class="editable form__field" id="textField" contenteditable="true">
+                        @Html.Raw(Model.emailMessages[0].StrippedHtml)
+                        </div>
+                        <input type="hidden" id="textFieldHidden" name="Text" />
+                        </div>
+
+                        <div class="d-flex justify-content-center align-items-center">
+                        <button type="submit" class="btn btn-outline-dark btn-sm ms-auto me-0 mt-1">Send Email</button>
+                        </div>
+                        </form>
+                        </div>
+                        </div>
+
+                        <!-- Forward Button -->
+                        <button type="button" class="btn btn-outline-secondary btn-sm">
+                        <i class="bi bi-forward"></i> Forward
+                        </button>
+                        </div>
+                        </div>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                        @Html.Raw(Model.emailMessages[0].StrippedHtml)
+                        </div>
+                        </div>
+                        </div> *@
+
+                        <div>
+                            @for (int i = Model.emailMessages.Count - 1; i > 0; i--)
+                            {
+                                var panelId = $"collapse{i}"; // ID for each panel
+                                var headingId = $"heading{i}"; // ID for each heading
+                                var subjectBackgroundcolor = Model.emailMessages[i].EmailType == "sent" ? "sentColour" : Model.emailMessages[i].EmailType == "received" ? "receivedColour" : "error";
+
+                                <div class="card position-relative conversation">
+                                    <div class="clickable-area" data-bs-toggle="collapse" data-bs-target="#@panelId" aria-expanded="true" aria-controls="@panelId"></div>
+
+                                    <div class="card-header @subjectBackgroundcolor" id="emailHeader">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                @Model.emailMessages[i].From
+                                            </div>
+                                            <div class="ml-auto" style="margin-right: 15px;">
+                                                <!-- Reply Button -->
+                                                <button class="btn btn-outline-dark btn-sm header-content" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-@Model.emailMessages[i].Id" aria-controls="offcanvas-@Model.emailMessages[i].Id">
+                                                    <i class="bi bi-reply"></i> Reply
+                                                </button>
+
+                                                <div class="offcanvas offcanvas-start bg-secondary" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvas-@Model.emailMessages[i].Id" aria-labelledby="offcanvasLabel-@Model.emailMessages[i].Id">
+                                                    <div class="offcanvas-header">
+                                                        <h5 class="offcanvas-title mx-auto" id="offcanvasLabel-@Model.emailMessages[i].Id">Send an email:</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="offcanvas-body">
+                                                        <form class="reply-form" method="post" action="/EmailMailgun/SendEmail" onsubmit="return prepareFormData(@i);">
+                                                            <div class="form__group field">
+                                                                <label class="mt-2" for="toField_@i">To:</label>
+                                                                <div class="editable form__field" id="toField_@i" contenteditable="true">
+                                                                    @Model.emailMessages[i].Sender
+                                                                </div>
+                                                                <input type="hidden" id="toFieldHidden_@i" name="To" />
+                                                            </div>
+
+                                                            <div class="form__group field">
+                                                                <label class="mt-2" for="subjectField_@i">Subject:</label>
+                                                                <div class="editable form__field" id="subjectField_@i" contenteditable="true">
+                                                                    @Model.emailMessages[i].Subject
+                                                                </div>
+                                                                <input type="hidden" id="subjectFieldHidden_@i" name="Subject" />
+                                                            </div>
+
+                                                            <div class="form__group field">
+                                                                <label class="mt-2" for="textField_@i">Text:</label>
+                                                                <div class="editable form__field" id="textField_@i" contenteditable="true">
+                                                                    @Html.Raw(Model.emailMessages[i].StrippedHtml)
+                                                                </div>
+                                                                <input type="hidden" id="textFieldHidden_@i" name="Text" />
+                                                            </div>
+
+                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                <button type="submit" class="btn btn-outline-dark btn-sm ms-auto me-0 mt-1">Send Email</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <!-- Forward Button -->
+                                                <button type="button" class="btn btn-outline-secondary btn-sm">
+                                                    <i class="bi bi-forward"></i> Forward
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="@panelId" class="panel-collapse collapse @(i == Model.emailMessages.Count - 1 ? "in" : "") @(i == Model.emailMessages.Count - 1 ? "show" : "")" aria-labelledby="@headingId">
+                                        <div class="card-body" id="subjectField">
+                                            @Html.Raw(Model.emailMessages[i].StrippedHtml)
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <script>
+                                    function prepareFormData(index) {
+                                        // Get the 'To' field and hidden input
+                                        var toField = document.getElementById('toField_' + index);
+                                        var toFieldHidden = document.getElementById('toFieldHidden_' + index);
+                                        if (toField && toFieldHidden) {
+                                            toFieldHidden.value = toField.innerText.trim(); // or .textContent
+                                        }
+
+                                        // Get the 'Subject' field and hidden input
+                                        var subjectField = document.getElementById('subjectField_' + index);
+                                        var subjectFieldHidden = document.getElementById('subjectFieldHidden_' + index);
+                                        if (subjectField && subjectFieldHidden) {
+                                            subjectFieldHidden.value = subjectField.innerText.trim(); // or .textContent
+                                        }
+
+                                        // Get the 'Text' field and hidden input
+                                        var textField = document.getElementById('textField_' + index);
+                                        var textFieldHidden = document.getElementById('textFieldHidden_' + index);
+                                        if (textField && textFieldHidden) {
+                                            textFieldHidden.value = textField.innerText.trim(); // or .textContent
+                                        }
+
+                                        return true; // Or perform further validations and return false if needed
+                                    }
+                                </script>
+                            }
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                @*Resolution tab *@
+                <div id="resolution" class="tab-pane fade">
+                    <div class="resolution-box">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <h5 class="mx-auto" id="offcanvasScrollingLabel">Reason to close request: </h5>
+                        </div>
+                        <div>
+                            <div class="form__group field">
+                                <form action="@Url.Action("RequestStatusUpdateTOClose", "Request")" method="post">
+
+                                    <input type="hidden" name="RequestID" value="@Model.listOfRequests[0].ListOfRequestsID" />
+
+                                    <div class="form-group">
+                                        <label class="mt-2" for="textField">Resolution:</label>
+                                        <input type="text" id="Name" name="UpdatedResolution" value="@Model.listOfRequests[0].Resolution" class="close-request-input form__field" />
+                                        <span class="text-danger"></span>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <button type="submit" class="btn btn-outline-dark btn-sm ms-auto me-0 mt-1">Close Request</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <script>
+                            function prepareSecondFormData() {
+                                // Fetch the innerText of the contenteditable div and trim it
+                                var toField = document.getElementById('toField').innerText.trim();
+                                console.log(toField);
+
+                                // Assign the trimmed text to the hidden field
+                                document.getElementById('textFieldHidden').value = toField;
+
+                                return true; // Allow the form to submit
+                            }
+                        </script>
+
+                        <div id="historyOfRequest" class="container tab-pane fade">
+                            <br>
+                            <h3>In Development</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 ticket-info-box" style="background-color: #E5E5E5">
+            <h4 class="text-center p-2">Ticket Info</h4>
+            <table class="table table-borderless table-light table-no-top-border">
+                <tbody>
+                    <tr>
+                        <td class="fw-bold">Status:</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-alert-light btn-outline-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    @Model.listOfRequests[0].Status
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item">
+                                        <form class="btn-light" method="post" action="/Request/RequestStatusUpdateToOpen">
+                                            <input hidden value="@Model.listOfRequests[0].ListOfRequestsID" name="requestID" />
+                                            <button type="submit">Open request</button>
+                                        </form>
+                                    </li>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <form class="btn-light" method="post" action="/Request/RequestStatusUpdateToOnhold">
+                                            <input hidden value="@Model.listOfRequests[0].ListOfRequestsID" name="requestID" />
+                                            <button type="submit">Onhold request</button>
+                                        </form>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#closeRequest">
+                                            Close request
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Requester:</td>
+                        <td>
+                            @foreach (var item in Model.emailMessages[0].From)
+                            {
+                                if (item == '<')
+                                {
+                                    break; // Stops the loop if the item is '<'
+                                }
+                                else
+                                {
+                                    @Html.DisplayFor(m => item)
+                                }
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Requested at:</td>
+
+                        <td>@Model.emailMessages[0].Date.ToString("dd/MM/yyyy HH:mm")</td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td>@Model.emailMessages[0].From</td>
+                    </tr>
+                    <tr>
+                        <td>Group:</td>
+                        <td>In Development</td>
+                    </tr>
+                    <tr>
+                        <td>Technician:</td>
+                        <td>In Development</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+        
+
+
+<!-- The Modal to close request -->
+<div class="modal fade modal-lg" id="closeRequest">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Reason to close request:
+                </h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div>
+                    <div class="form__group field">
+                        <form action="@Url.Action("RequestStatusUpdateTOClose", "Request")" method="post">
+
+                            <input type="hidden" name="RequestID" value="@Model.listOfRequests[0].ListOfRequestsID" />
+
+                            <div class="form-group">
+                                <label class="mt-2" for="textField">Resolution:</label>
+                                <input type="text" id="Name" name="UpdatedResolution" value="@Model.listOfRequests[0].Resolution" class="close-request-input form__field" />
+                                <span class="text-danger"></span>
+                            </div>
+
+                            <div class="d-flex justify-content-center align-items-center">
+                                <button type="submit" class="btn btn-outline-dark btn-sm ms-auto me-0 mt-1">Close Request</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <script>
+                    function prepareSecondFormData() {
+                        var toField = document.getElementById('toField').innerText.trim();
+
+                        document.getElementById('textFieldHidden').value = toField;
+
+                        return true;
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+</div>

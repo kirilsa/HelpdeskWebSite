@@ -148,11 +148,11 @@ strong[b-631j2yxniw] {
 }
 
 .bg-green[b-631j2yxniw] {
-    background-color: #d4ff97;
+    background-color: #559d66;
 }
 
 .bg-red[b-631j2yxniw] {
-    background-color: #fcb5b5;
+    background-color: #a9cc76;
 }
 
 .error[b-631j2yxniw]{
@@ -160,13 +160,49 @@ strong[b-631j2yxniw] {
 }
 
 button[b-631j2yxniw]{
-    background-color: #fefabc;
+    background-color: #ccc;
 }
 
 .ticket-info-box[b-631j2yxniw] {
     overflow: hidden;
 }
-    
+
 table[b-631j2yxniw] {
     border-collapse: collapse;
 }
+
+/* List of the requsts in the left menu */
+
+.request-topic[b-631j2yxniw] {
+    background-color: white;
+    border: 0;
+    border-radius: 3px;
+}
+
+.request-box[b-631j2yxniw] {
+    background-color: white;
+    margin: 2px 0 2px 0;
+    /*padding: 2px 2px 2px 5px;*/
+    border: 1px solid #2D2926;
+    border-radius: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+}
+
+.subject-requstBox[b-631j2yxniw] {
+    display: block;
+    width: 100%;
+    background-color: #8dc3d4;
+}
+
+.additional-info-requstBox li[b-631j2yxniw] {
+    list-style-type: circle;
+}
+
+ul[b-631j2yxniw] {
+    margin: 0;
+}
+
+

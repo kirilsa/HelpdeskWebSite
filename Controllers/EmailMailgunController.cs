@@ -72,7 +72,7 @@ namespace HelpDeskWebSite.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Home", "Privacy");
+                        return RedirectToAction("Second", "Home");
                     }
 
                     await _context.SaveChangesAsync();
@@ -84,7 +84,7 @@ namespace HelpDeskWebSite.Controllers
                     ModelState.AddModelError(string.Empty, "Error sending email: " + response.ErrorMessage);
                 }
             }
-            return RedirectToAction("Home", "Privacy");
+            return RedirectToAction("First", "Home");
         }
     }
 }

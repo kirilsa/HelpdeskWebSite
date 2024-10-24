@@ -10,6 +10,8 @@ using HelpDeskWebSite.Models;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Humanizer;
 using System.Net.Mail;
+using Org.BouncyCastle.Asn1.Ocsp;
+using Org.BouncyCastle.Tsp;
 
 namespace HelpDeskWebSite.Controllers
 {
@@ -32,6 +34,128 @@ namespace HelpDeskWebSite.Controllers
 
         // GET: Request/Details/5
         public async Task<IActionResult> Details(int? id)
+        {
+            var requests = await _context.ListOfRequests
+                .FirstOrDefaultAsync(m => m.ListOfRequestsID == id);
+
+            var conversation = new List<ListOfRequests>();
+            conversation.Add(requests);
+
+            int? headRequest = requests.HeadOfConversation;
+
+            var usersConversation = new List<EmailMessage>();
+
+            if (requests == null)
+            {
+                return NotFound();//In development
+            }
+            else
+            {
+                while (headRequest != null)
+                {
+                    var current = await _context.EmailMessages.SingleOrDefaultAsync(i => i.Id == headRequest);
+
+                    headRequest = current.InReply;
+
+                    usersConversation.Add(current);
+
+                    if (current == null || current.InReply == null)
+                    {
+                        break;
+                    }
+                }
+            }
+
+            var paginatedData = await _context.ListOfRequests
+                .Include(r => r.EmailMessage)
+                .OrderByDescending(r => r.ListOfRequestsID)
+                .Take(10)
+                .ToListAsync();
+
+            var viewModel = new ListOfRequestsAndRequest
+            {
+                Data = paginatedData,   //for the left list
+                emailMessages = usersConversation,   //for displaying conversation
+                listOfRequests = conversation
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> RequestStatusUpdateTOCloseAsync(UpdateResolutionANDCloseRequest updateRequestStatus)
+        {
+            if (ModelState.IsValid)
+            {
+                var currentRequest = await _context.ListOfRequests
+                            .FirstOrDefaultAsync(m => m.ListOfRequestsID == updateRequestStatus.RequestID);
+
+                currentRequest.Resolution = updateRequestStatus.UpdatedResolution;
+                currentRequest.Status = "Closed";
+
+                _context.ListOfRequests.Update(currentRequest);
+                await _context.SaveChangesAsync();
+
+            }
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                foreach (var error in errors)
+                {
+                    Console.WriteLine(updateRequestStatus.UpdatedResolution);
+                    Console.WriteLine(updateRequestStatus.RequestID);
+                    Console.WriteLine("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
+                    Console.WriteLine(error.ErrorMessage); // Log errors for troubleshooting
+                }
+            }
+
+            return RedirectToAction("Details", "Request", new { id = updateRequestStatus.RequestID });
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> RequestStatusUpdateToOpen(int requestID)
+        {
+            var currentRequest = await _context.ListOfRequests
+                            .FirstOrDefaultAsync(m => m.ListOfRequestsID == requestID);
+
+            currentRequest.Status = "Open";
+
+            _context.ListOfRequests.Update(currentRequest);
+            await _context.SaveChangesAsync();
+
+
+            return RedirectToAction("Details", "Request", new { id = requestID });
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> RequestStatusUpdateToOnhold(int requestID)
+        {
+            var currentRequest = await _context.ListOfRequests
+                            .FirstOrDefaultAsync(m => m.ListOfRequestsID == requestID);
+
+            currentRequest.Status = "Onhold";
+
+            _context.ListOfRequests.Update(currentRequest);
+            await _context.SaveChangesAsync();
+
+
+            return RedirectToAction("Details", "Request", new { id = requestID });
+        }
+
+
+        /*        [HttpPost]
+                public IActionResult RequestStatusUpdateTOClose(string Email)
+                {
+                    Console.WriteLine($" Email: {Email}");
+                    Console.WriteLine(Email);
+                    Console.WriteLine("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
+
+
+                    return RedirectToAction("Details", "Request", new { id = 34 });
+                }*/
+
+
+        public async Task<IActionResult> DetailsOrigin(int? id)
         {
             var requests = await _context.ListOfRequests
                 .FirstOrDefaultAsync(m => m.ListOfRequestsID == id);
@@ -63,6 +187,8 @@ namespace HelpDeskWebSite.Controllers
 
             return View(usersConversation);
         }
+
+
 
         // GET: Request/Create
         public IActionResult Create()

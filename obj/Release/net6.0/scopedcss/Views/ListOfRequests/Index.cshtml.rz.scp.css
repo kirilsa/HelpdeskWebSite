@@ -9,12 +9,12 @@
 }
 
 
-td[b-1alh8hp3nc], th[b-1alh8hp3nc] {
+th[b-1alh8hp3nc], td[b-1alh8hp3nc]{
     white-space: nowrap;
-    overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 400px; /* Set a max-width as per your layout */
+    max-width: 300px;
 }
+
 
 th[b-1alh8hp3nc] {
     color: white;
@@ -42,3 +42,51 @@ table[b-1alh8hp3nc] {
 .highlight-row[b-1alh8hp3nc]{
     background-color: aquamarine;
 }
+
+/*Drop-down menu*/
+.Open[b-1alh8hp3nc] {
+    background-color: aqua;
+}
+
+.Open[b-1alh8hp3nc]:after {
+    color: black;
+
+}
+
+.Onhold[b-1alh8hp3nc] {
+    background-color: antiquewhite;
+}
+
+.Closed[b-1alh8hp3nc] {
+    background-color: aquamarine;
+}
+
+.statusButton:hover[b-1alh8hp3nc] {
+    color: black;
+    background-color: var(--bs-btn-active-bg);
+}
+
+.statusButton[b-1alh8hp3nc]:after {
+    color: black;
+    background-color: black;
+}
+
+.dropdown-item[b-1alh8hp3nc] {
+    padding: 0;
+}
+
+    .dropdown-item button[b-1alh8hp3nc] {
+        border: 0;
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        padding: 0.375rem 1.5rem;
+        text-align: left;
+        color: #888888;
+        background-color: white;
+    }
+
+        .dropdown-item button:hover[b-1alh8hp3nc] {
+            background-color: #f8f9fa;
+            color: black;
+        }

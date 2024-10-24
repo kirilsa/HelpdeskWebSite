@@ -70,7 +70,8 @@ namespace HelpDeskWebSite.Controllers
                     {
                         ListOfRequestsID = IdOfTheNewEmail,
                         HeadOfConversation = IdOfTheNewEmail,
-                        TailOfConversation = IdOfTheNewEmail
+                        TailOfConversation = IdOfTheNewEmail,
+                        Status = "Open"
                     };
 
                     _context.ListOfRequests.Add(newListOfRequest);

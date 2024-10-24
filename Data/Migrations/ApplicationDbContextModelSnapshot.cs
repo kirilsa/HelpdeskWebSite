@@ -59,7 +59,7 @@ namespace HelpDeskWebSite.Data.Migrations
                     b.Property<string>("ContentIdMap")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTimeOffset?>("Date")
+                    b.Property<DateTimeOffset>("Date")
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("EmailType")
@@ -116,6 +116,14 @@ namespace HelpDeskWebSite.Data.Migrations
 
                     b.Property<int>("HeadOfConversation")
                         .HasColumnType("int");
+
+                    b.Property<string>("Resolution")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TailOfConversation")
                         .HasColumnType("int");
