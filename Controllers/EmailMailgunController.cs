@@ -3,6 +3,7 @@ using HelpDeskWebSite.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Org.BouncyCastle.Asn1.Ocsp;
 using SQLitePCL;
 using System.Text.RegularExpressions;
 
@@ -48,11 +49,12 @@ namespace HelpDeskWebSite.Controllers
                     int IdOfTheNewEmail = emailMessage.Id;
 
                     //if the db already has users request with this ID
-                    if (subject != null && subject.StartsWith("[ID") && int.TryParse(subject.Substring(3, 1), out emailConversationId))
+                    Match checkIDInSubject = Regex.Match(subject, @"\[ID(\d+)\]");
+
+                    if (subject != null && checkIDInSubject.Success && int.TryParse(checkIDInSubject.Groups[1].Value, out emailConversationId))
                     {
-                        int currentRequestId = int.Parse(Regex.Replace(subject, "[^0-9]", ""));
                         int? previousEmialIDOfConversation = await _context.ListOfRequests
-                            .Where(i => i.ListOfRequestsID == currentRequestId).Select(i => i.TailOfConversation).FirstOrDefaultAsync();
+                            .Where(i => i.ListOfRequestsID == emailConversationId).Select(i => i.TailOfConversation).FirstOrDefaultAsync();
                         var emailEntityOfPrevEmail = await _context.EmailMessages.SingleOrDefaultAsync(e => e.Id == previousEmialIDOfConversation);
 
                         if (emailEntityOfPrevEmail != null)
@@ -62,22 +64,19 @@ namespace HelpDeskWebSite.Controllers
                         }
 
                         var entityOfListOfRequests = await _context.ListOfRequests
-                           .SingleOrDefaultAsync(i => i.ListOfRequestsID == currentRequestId);
+                           .SingleOrDefaultAsync(i => i.ListOfRequestsID == emailConversationId);
                         entityOfListOfRequests.TailOfConversation = IdOfTheNewEmail;
 
                         _context.ListOfRequests.Update(entityOfListOfRequests);
-
                         await _context.SaveChangesAsync();
+
+                        return RedirectToAction("Details", "Request", new { id = emailConversationId });
 
                     }
                     else
                     {
                         return RedirectToAction("Second", "Home");
                     }
-
-                    await _context.SaveChangesAsync();
-
-                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {

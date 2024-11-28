@@ -1,10 +1,12 @@
 ﻿using HelpDeskWebSite.Data;
 using HelpDeskWebSite.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace HelpDeskWebSite.Controllers
 {
+    [Authorize]
     public class ListOfRequestsController : Controller
     {
         private readonly ApplicationDbContext _context;

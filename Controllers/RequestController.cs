@@ -12,9 +12,11 @@ using Humanizer;
 using System.Net.Mail;
 using Org.BouncyCastle.Asn1.Ocsp;
 using Org.BouncyCastle.Tsp;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HelpDeskWebSite.Controllers
 {
+    [Authorize]
     public class RequestController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -143,7 +145,8 @@ namespace HelpDeskWebSite.Controllers
         }
 
 
-        /*        [HttpPost]
+        /*   for testing 
+         *   [HttpPost]
                 public IActionResult RequestStatusUpdateTOClose(string Email)
                 {
                     Console.WriteLine($" Email: {Email}");

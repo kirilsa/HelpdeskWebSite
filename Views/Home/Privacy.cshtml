@@ -4,3 +4,128 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
+
+
+<div class="side-menu">
+    <div class="progress-bar">
+        <div class="progress"></div>
+    </div>
+    <div class="menu" id="scrollspyMenu">
+        <div class="menu-item">
+            <a href="#home">00 Technology Stack</a>
+        </div>
+        <div class="menu-item">
+            <a href="#authentication">01 Authentication</a>
+        </div>
+        <div class="menu-item">
+            <a href="#services">02 Services</a>
+        </div>
+        <div class="menu-item">
+            <a href="#contact">03 Contact</a>
+        </div>
+    </div>
+</div>
+
+<div id="home" style="height: 100vh; background: lightgray;">Technology Stack Content</div>
+<div id="authentication" style="height: 100vh; background: lightblue;">Authentication Content</div>
+<div id="services" style="height: 100vh; background: lightgreen;">Services Content</div>
+<div id="contact" style="height: 100vh; background: lightcoral;">Contact Content</div>
+
+<style>
+    
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.side-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 50px; /* Adjust as needed for vertical spacing */
+}
+
+.progress-bar {
+    width: 2px;
+    background: lightgray;
+    position: relative;
+    margin-right: 10px;
+}
+
+.progress {
+    width: 2px;
+    height: 0;
+    background: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: height 0.3s ease;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item {
+    margin-bottom: 20px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: gray;
+    font-size: 14px;
+}
+
+.menu-item a:hover {
+    color: black;
+}
+
+        .menu-item.scrolled a {
+            color: red; /* Color for items already passed */
+        }
+
+</style>
+
+<script>
+    document.addEventListener('scroll', () => {
+        const menu = document.querySelector('.menu');
+        const progressBar = document.querySelector('.progress-bar');
+        const progress = document.querySelector('.progress');
+        const menuItems = document.querySelectorAll('.menu-item a');
+
+        // Get the height of the menu
+        const menuHeight = menu.offsetHeight;
+
+        // Adjust progress bar height to the menu height
+        progressBar.style.height = `${menuHeight}px`;
+
+        // Calculate scrolling percentage
+        const scrollableContentHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollTop = window.scrollY;
+        const scrollPercent = Math.min((scrollTop / scrollableContentHeight) * 100, 100);
+
+        // Set the height of the progress based on scrolling percentage
+        progress.style.height = `${(menuHeight * scrollPercent) / 100}px`;
+
+        // Check which sections have been passed
+        menuItems.forEach((item) => {
+            const section = document.querySelector(item.getAttribute('href'));
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+
+            if (scrollTop >= sectionTop + sectionHeight / 2) {
+                // Mark as scrolled past
+                item.parentElement.classList.add('scrolled');
+            } else {
+                // Remove scrolled mark
+                item.parentElement.classList.remove('scrolled');
+            }
+        });
+    });
+
+
+</script>

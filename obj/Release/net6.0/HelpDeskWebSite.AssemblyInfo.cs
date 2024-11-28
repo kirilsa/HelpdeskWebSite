@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HelpDeskWebSite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+98f778a67563673b6187953481228af1705a6f59")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5c49dcd392a33c9cc9e59a1dea5147c08e64d4cd")]
 [assembly: System.Reflection.AssemblyProductAttribute("HelpDeskWebSite")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HelpDeskWebSite")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

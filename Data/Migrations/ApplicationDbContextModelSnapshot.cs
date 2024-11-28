@@ -118,7 +118,6 @@ namespace HelpDeskWebSite.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Resolution")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Status")

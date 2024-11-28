@@ -2,21 +2,319 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container-fluid square-main-background">
+    <div class="border-main-background">
+        <div class="content">
+            <div class="row first" id="home">
+                <div class="col introdaction">
+                    <h1>Website <span>Introduction</span></h1>
+                    <p>
+                        As my second pet project, I decided to build a HelpDesk website designed to receive, send, and manage emails from any email service.
+                    </p>
+                </div>
+                <div class="col-auto vertical-line">
+                    <div class="vertical-text">SEE MY WORK</div>
+                </div>
+                <div class="col technology-stack">
+                    <h2>Technology Stack <i class="bi bi-gear"></i></h2>
+                    <p>Here is a quick overview of the technologies used to build this website:</p>
+                    <ul>
+                        <li><span>Backend: </span>Written in C# using the ASP.NET 6.0 framework with an MVC design pattern.</li>
+                        <li><span>Database: </span>Data is stored in a MySQL database, with most operations managed through Entity Framework.</li>
+                        <li><span>Frontend: </span>Built using HTML, CSS, and Bootstrap 5.3 for a clean and responsive design.</li>
+                        <li><span>Sending and receiving emails: </span>The Mailgun service is used for sending and receiving emails. More details can be found at the end of the page.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row" id="authentication">
+                <div class="col">
+                    <h2>Authentication <i class="bi bi-shield-lock"></i></h2>
+                    <p>
+                        To ensure user requests remain secure and private, I implemented Microsoft Authentication, which restricts unauthorized users from accessing sensitive information.
+                    </p>
+                    <p>
+                        You can use the following credentials to access the site:
+                    </p>
+                    <ul>
+                        <li><span>Email: </span>Presenting@solominskyi.com</li>
+                        <li><span>Password: </span>Presenting123!</li>
+                    </ul>
+                    <p>
+                        Currently, any user can create an account and log in to the website, as this is a personal project.
+                    </p>
+                    <p>
+                        All credentials are securely stored in my Microsoft Azure Database, ensuring the website is accessible at any time.
+                    </p>
+                </div>
+                <div class="col">
+                    <div class="picture">
+                        <img src="/image/Authentification-page.jpg" alt="Authentication picture" />
+                    </div>
+                </div>
+            </div>
+            <dib class="row" id="features">
+                <div class="col">
+                    <div class="picture">
+                        <img src="/image/Requests-Page.jpg" alt="Page with a sent requests" />
+                    </div>
+                </div>
+                <div class="col">
+                    <h2>Features <i class="bi bi-lightbulb"></i></h2>
+                    <p>
+                        Once logged in, you can view all submitted requests.
+                    </p>
+                    <p>
+                        Requests can be updated to change their status from Open to On Hold or Closed.
+                    </p>
+                    <p>
+                        To reply to or view more details about a specific request, simply open the relevant ticket.
+                    </p>
+                </div>
+            </dib>
+            <div class="row">
+                <div class="col">
+                    <p>
+                        The website interface is structured as follows:
+                    </p>
+                    <ul>
+                        <li><span>Left-side menu: </span>Displays the last 10 requests.</li>
+                        <li><span>Right-side menu: </span>Shows more detailed information about a selected request.</li>
+                        <li><span>Central section: </span>Displays replies, resolutions, and the ticket history.</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <div class="picture">
+                        <img src="/image/Request-page.jpg" alt="Page that shows user's reuqst" />
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="receivesEmails">
+                <div class="col">
+                    <h2>Below you can see the way it receives emails <i class="bi bi-envelope-arrow-down"></i></h2>
+                    <ol>
+                        <li>
+                            <span>Sent email</span>
+                            <ul>
+                                <li>
+                                    A user sends an email to the email address with my email domain which is
+                                    <a href="mailto:nothingImportant@solominskyi.com">@@solominskyi.com</a>"
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>Mailgun(processing email)</span>
+                            <ul>
+                                <li>
+                                    The email is intercepted and processed by Mailgun, a transactional email service provider.
+                                    Mailgun acts as an intermediary that captures the incoming email and parses its content.
+                                </li>
+                                <li>
+                                    Once Mailgun processes the email, it triggers a webhook to your application’s configured endpoint 
+                                    (https://helpdeskwebsite-gef3ecb0gbb8c3g0.eastus-01.azurewebsites.net/Email/EndpointEmail).
+                                    This webhook contains the email data, such as the sender, subject, body, and attachments.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>Data Storage</span>
+                            <ul>
+                                <li>
+                                    The website’s endpoint receives the webhook payload and processes it. 
+                                    This includes extracting useful information from the email, processing data from the email and storing.
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col">
+                    <div class="picture">
+                        <img src="~/image/Reseive-emails.jpg" />
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="sendsEmails">
+                <div class="col">
+                    <div class="picture">
+                        <img src="/image/Send-email-from-the-websiteNEW.jpg" />
+                    </div>
+                </div>
+                <div class="col">
+                    <h2>The way email is being sent <i class="bi bi-envelope-arrow-up"></i></h2>
+                    <ol>
+                        <li>
+                            <span>User Action</span>
+                            <ul>
+                                <li>
+                                    A user sends an email to an email address with your domain <a href="mailto:nothingImportant@solominskyi.com">@@solominskyi.com</a> via the website interface.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>Email Handling</span>
+                            <ul>
+                                <li>
+                                    When the application needs to send an email, it makes a request to the Mailgun API endpoint.
+                                    Mailgun processes this request and delivers the actual email to the recipient's email address
+                                    (the user's email)
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>Data Storage</span>
+                            <ul>
+                                <li>
+                                    The processed data is then saved to a database. This allows the email’s content to be used later,
+                                    such as displaying it in the application’s interface or triggering other workflows.
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
 
-
-    @* <div>
-        @if (User.Identity.IsAuthenticated)
-        {
-            <p>Yes</p>
-        }
-        else
-        {
-            <p>No</p>
-        }
-    </div> *@
-
-
+                </div>
+            </div>
+        </div>
+        <div class="side-menu">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="menu" id="scrollspyMenu">
+                <div class="menu-item">
+                    <a href="#home">00 Technology Stack</a>
+                </div>
+                <div class="menu-item">
+                    <a href="#authentication">01 Authentication</a>
+                </div>
+                <div class="menu-item">
+                    <a href="#features">02 Features</a>
+                </div>
+                <div class="menu-item">
+                    <a href="#receivesEmails">03 The way it receives emails</a>
+                </div>
+                <div class="menu-item">
+                    <a href="#sendsEmails">04 The way it sends emails</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<style>
+
+
+    img {
+        margin: auto;
+        max-height: 450px;
+        border-radius: 3px;
+    }
+
+    .picture {
+        display: grid;
+        place-items: center;
+    }
+
+
+    .side-menu {
+        width: 200px;
+        display: flex;
+        align-items: flex-start;
+        padding-left: 10px;
+        border-left: 3px solid white;
+    }
+
+    .menu, .progress-bar {
+        position: fixed;
+        top: 25%;
+        transform: translateY(-50%);
+        text-align: left;
+        z-index: 1000;
+    }
+
+    .progress-bar {
+        width: 2px;
+        background: lightgray;
+        margin-right: 10px;
+    }
+
+    .progress {
+        width: 2px;
+        height: 0;
+        background: red;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: height 0.3s ease;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+    }
+
+    .menu-item {
+        margin-bottom: 20px;
+    }
+
+        .menu-item a {
+            text-decoration: none;
+            color: gray;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+            .menu-item a:hover {
+                color: black;
+            }
+
+        .menu-item.scrolled a {
+            color: red; /* Color for items already passed */
+        }
+
+        .menu-item.active a {
+            color: blue; /* Change to the color you want for the active section */
+            font-weight: bold; /* Optional: make it bold */
+        }
+
+        .menu-item.next a {
+            color: blue; /* Color for the next section */
+        }
+</style>
+
+<script>
+    
+    document.addEventListener('scroll', () => {
+        const menu = document.querySelector('.menu');
+        const progressBar = document.querySelector('.progress-bar');
+        const progress = document.querySelector('.progress');
+        const menuItems = document.querySelectorAll('.menu-item a');
+
+        // Get the height of the menu
+        const menuHeight = menu.offsetHeight;
+
+        // Adjust progress bar height to the menu height
+        progressBar.style.height = `${menuHeight}px`;
+
+        // Calculate scrolling percentage
+        const scrollableContentHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollTop = window.scrollY;
+        const scrollPercent = Math.min((scrollTop / scrollableContentHeight) * 100, 100);
+
+        // Set the height of the progress based on scrolling percentage
+        progress.style.height = `${(menuHeight * scrollPercent) / 100}px`;
+
+        // Check which sections have been passed
+        menuItems.forEach((item) => {
+            const section = document.querySelector(item.getAttribute('href'));
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+
+            if (scrollTop >= sectionTop + sectionHeight / 2) {
+                // Mark as scrolled past
+                item.parentElement.classList.add('scrolled');
+            } else {
+                // Remove scrolled mark
+                item.parentElement.classList.remove('scrolled');
+            }
+        });
+    });
+</script>

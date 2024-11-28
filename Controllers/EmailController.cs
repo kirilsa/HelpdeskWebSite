@@ -2,6 +2,7 @@
 using HelpDeskWebSite.Data.Migrations;
 using HelpDeskWebSite.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.Differencing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using System.Text.RegularExpressions;
@@ -38,11 +39,12 @@ namespace HelpDeskWebSite.Controllers
 
                 //Keep track of the Users conversation
                 string subject = emailMessage.Subject;
+                Match checkIDInSubject = Regex.Match(subject, @"\[ID(\d+)\]");
                 int emailConversationId;
                 int IdOfTheNewEmail = emailMessage.Id;
 
                 //if the db already has users request with this ID
-                if (subject != null && subject.StartsWith("[ID") && int.TryParse(subject.Substring(3, 1), out emailConversationId))
+                if (subject != null && checkIDInSubject.Success && int.TryParse(checkIDInSubject.Groups[1].Value, out emailConversationId))
                 {
                     int currentRequestId = int.Parse(Regex.Replace(subject, "[^0-9]", ""));
                     int previousEmialIDOfConversation = await _context.ListOfRequests

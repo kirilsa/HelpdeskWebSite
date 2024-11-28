@@ -11,7 +11,7 @@ namespace HelpDeskWebSite.Models
         public int HeadOfConversation { get; set; }
         public int TailOfConversation { get; set; }
         public string Status { get; set; }
-        public string Resolution { get; set; }
+        public string? Resolution { get; set; }
 
         [JsonIgnore]
         public virtual EmailMessage EmailMessage { get; set; }

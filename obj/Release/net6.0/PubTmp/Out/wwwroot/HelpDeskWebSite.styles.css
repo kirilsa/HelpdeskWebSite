@@ -110,6 +110,128 @@ button[b-qre8whpset] {
 button[b-qre8whpset] {
     margin-top: 30px;
 }
+/* _content/HelpDeskWebSite/Views/Home/Index.cshtml.rz.scp.css */
+.border-main-background[b-82oibsa0jw] {
+    max-width: 1700px;
+    padding: 15px;
+    margin: auto;
+    background-color: #f0f0f0;
+    border: 3px solid rgb(108 117 125);
+    border-radius: 15px;
+    justify-content: center;
+    display: flex;
+}
+
+.row[b-82oibsa0jw] {
+    margin-bottom: 40px;
+}
+
+h2[b-82oibsa0jw] {
+    text-align: center;
+    margin: 10px;
+    justify-content: center;
+    padding: 8px 16px;
+    background-color: lightgray;
+    color: #4b5563;
+    font-size: 30px;
+    font-weight: 500;
+    border-radius: 9999px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+h2 i[b-82oibsa0jw] {
+    color: #ff6a00;
+}
+
+span[b-82oibsa0jw] {
+    font-weight: bold;
+}
+
+li span[b-82oibsa0jw] {
+    font-weight: bold;
+}
+
+.first[b-82oibsa0jw] {
+    justify-content: center;
+}
+
+
+
+.introdaction[b-82oibsa0jw], .technology-stack[b-82oibsa0jw] {
+    max-width: 45%;
+    margin: 10px;
+}
+
+    .introdaction h1[b-82oibsa0jw] {
+        margin-top: 20%;
+        text-align: center;
+    }
+
+        .introdaction h1 span[b-82oibsa0jw] {
+            color: orangered;
+            font-weight: 500;
+        }
+
+    .introdaction p[b-82oibsa0jw] {
+        text-align: center;
+    }
+
+    .technology-stack span[b-82oibsa0jw] {
+        font-weight: bold;
+    }
+
+.vertical-line[b-82oibsa0jw] {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+    .vertical-line[b-82oibsa0jw]::before {
+        content: "";
+        width: 3px;
+        height: 100%;
+        background: lightgray;
+        position: absolute;
+    }
+
+    .vertical-line[b-82oibsa0jw]::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid lightgray;
+        position: absolute;
+        bottom: -10px;
+    }
+
+.vertical-text[b-82oibsa0jw] {
+    padding: 0 5px 0 5px;
+    position: relative;
+    background: #f0f0f0;
+    border-radius: 9999px;
+    border: 3px solid lightgray;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+img[b-82oibsa0jw] {
+    width: 95%;
+}
+
+.content[b-82oibsa0jw] {
+    flex: 1;
+    padding: 20px 0 20px 20px;
+    box-sizing: border-box;
+}
+
+
+
+
+/*Side Menu*/
 /* _content/HelpDeskWebSite/Views/ListOfRequests/Index.cshtml.rz.scp.css */
 .tool-bar[b-1alh8hp3nc] {
     display: flex;
@@ -122,12 +244,12 @@ button[b-qre8whpset] {
 }
 
 
-td[b-1alh8hp3nc], th[b-1alh8hp3nc] {
+th[b-1alh8hp3nc], td[b-1alh8hp3nc]{
     white-space: nowrap;
-    overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 400px; /* Set a max-width as per your layout */
+    max-width: 300px;
 }
+
 
 th[b-1alh8hp3nc] {
     color: white;
@@ -155,6 +277,54 @@ table[b-1alh8hp3nc] {
 .highlight-row[b-1alh8hp3nc]{
     background-color: aquamarine;
 }
+
+/*Drop-down menu*/
+.Open[b-1alh8hp3nc] {
+    background-color: aqua;
+}
+
+.Open[b-1alh8hp3nc]:after {
+    color: black;
+
+}
+
+.Onhold[b-1alh8hp3nc] {
+    background-color: antiquewhite;
+}
+
+.Closed[b-1alh8hp3nc] {
+    background-color: aquamarine;
+}
+
+.statusButton:hover[b-1alh8hp3nc] {
+    color: black;
+    background-color: var(--bs-btn-active-bg);
+}
+
+.statusButton[b-1alh8hp3nc]:after {
+    color: black;
+    background-color: black;
+}
+
+.dropdown-item[b-1alh8hp3nc] {
+    padding: 0;
+}
+
+    .dropdown-item button[b-1alh8hp3nc] {
+        border: 0;
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        padding: 0.375rem 1.5rem;
+        text-align: left;
+        color: #888888;
+        background-color: white;
+    }
+
+        .dropdown-item button:hover[b-1alh8hp3nc] {
+            background-color: #f8f9fa;
+            color: black;
+        }
 /* _content/HelpDeskWebSite/Views/ListOfRequests/Test.cshtml.rz.scp.css */
 .tool-bar[b-fxvdea441f] {
     display: flex;
@@ -200,7 +370,8 @@ table[b-fxvdea441f] {
 .highlight-row[b-fxvdea441f] {
     background-color: aquamarine;
 }
-/* _content/HelpDeskWebSite/Views/Request/Details.cshtml.rz.scp.css */
+/* _content/HelpDeskWebSite/Views/Request/details.cshtml.rz.scp.css */
+
 .border-main-background[b-631j2yxniw] {
     padding: 1px;
     background-color: #f0f0f0;
@@ -213,83 +384,78 @@ a:hover[b-631j2yxniw], a:focus[b-631j2yxniw] {
     outline: none;
 }
 
-#accordion .panel[b-631j2yxniw] {
-    border: none;
-    border-radius: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    margin: 10px 0 12px 5px;
-    position: relative;
+.email-conversation[b-631j2yxniw] {
+    padding-right: 10px;
 }
 
-    #accordion .panel[b-631j2yxniw]:before {
-        content: "";
-        width: 2px;
-        height: 100%;
-        background: #305275;
-        position: absolute;
-        top: 0;
-        left: -2px;
-    }
-
-#accordion .panel-heading[b-631j2yxniw] {
-    padding: 0;
-    position: relative;
-}
-
-#accordion .panel-title a[b-631j2yxniw] {
-    display: block;
-    padding: 10px 55px 10px 30px;
-    font-size: 20px;
-    font-weight: 600;
-    color: #550527;
-    border: none;
-    margin: 0;
-    position: relative;
-}
-
-#accordion .panel-title h5[b-631j2yxniw]{
-    margin-bottom: 0px;
-}
-
-#accordion .panel-title btn[b-631j2yxniw]:before,
-#accordion .panel-title btn[b-631j2yxniw] {
+.clickable-area[b-631j2yxniw] {
     position: absolute;
-    right: 25px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    cursor: pointer;
 }
 
-#accordion .panel-body[b-631j2yxniw] {
-    padding: 0 30px 15px;
-    border: none;
-    font-size: 14px;
-    color: #305275;
-    line-height: 28px;
-}
-
-#accordion .panel-heading.conversation[b-631j2yxniw]:before {
-    content: "";
-    width: 15px;
-    height: 15px;
-    border-radius: 50px;
-    background: #fff;
-    border: 1px solid #550527;
-    position: absolute;
-    top: 50%;
-    left: -48px;
-    transform: translateY(-50%);
-}
-
-
-#accordion .panel.conversation[b-631j2yxniw] {
-    border: none;
-    border-radius: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    margin: 0 0 12px 50px;
+.header-content[b-631j2yxniw] {
     position: relative;
+    z-index: 2;
 }
+
+.card-header[b-631j2yxniw] {
+    position: relative;
+    max-width: 100%; /* Or a specific width, e.g., 300px */
+    width: 100%;
+}
+
+/*Conversation emails*/
+
+.timeline-item[b-631j2yxniw] {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Ensure it stretches the full width */
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.card[b-631j2yxniw] {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card-header[b-631j2yxniw] {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header-container[b-631j2yxniw] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.text-card-header-conversation[b-631j2yxniw] {
+    flex: 1;
+}
+
+.reply-forward-buttons[b-631j2yxniw] {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.btn[b-631j2yxniw] {
+    flex-shrink: 0;
+}
+
+
 /*Reply Form*/
-
 .offcanvas[b-631j2yxniw] {
-    width: 60%; 
+    width: 60%;
     max-width: 100%;
 }
 .form-control[b-631j2yxniw] {
@@ -321,7 +487,7 @@ a:hover[b-631j2yxniw], a:focus[b-631j2yxniw] {
     height: 60vh;
 }
 
-.editable[b-631j2yxniw] {
+.editable[b-631j2yxniw], .close-request-input[b-631j2yxniw] {
     width: 100%;
     height: auto;
     max-height: 70vh;
@@ -350,12 +516,12 @@ strong[b-631j2yxniw] {
     border-radius: 3px;
 }
 
-.bg-green[b-631j2yxniw] {
+.sentColour[b-631j2yxniw] {
     background-color: #559d66;
 }
 
-.bg-red[b-631j2yxniw] {
-    background-color: #a9cc76;
+.receivedColour[b-631j2yxniw] {
+    background-color: #efe99c;
 }
 
 .error[b-631j2yxniw]{
@@ -408,7 +574,79 @@ ul[b-631j2yxniw] {
     margin: 0;
 }
 
+/*Timeline*/
 
+ img[b-631j2yxniw] {
+	 display: block;
+	 max-width: 100%;
+}
+/* End basic CSS override */
+.timeline[b-631j2yxniw] {
+    max-width: 700px;
+    margin-left: 3%;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid #e3e3e3;
+    font-size: 1.125rem;
+}
+.timeline-item[b-631j2yxniw] {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    flex-grow: 1;
+    align-items: stretch;
+    box-sizing: border-box;
+    min-width: 0; /* Prevent flex container from shrinking unexpectedly */
+}
+
+ .timeline-item-icon[b-631j2yxniw] {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 width: 40px;
+	 height: 40px;
+	 border-radius: 50%;
+	 margin-left: -52px;
+	 flex-shrink: 0;
+	 overflow: hidden;
+	 box-shadow: 0 0 0 6px #fff;
+}
+ .timeline-item-icon svg[b-631j2yxniw] {
+	 width: 20px;
+	 height: 20px;
+}
+
+/*Resolution*/
+.resolution-box[b-631j2yxniw] {
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px 10px;
+    background-color: #E5E5E5;
+    border: 3px solid #E5E5E5;
+    border-radius: 6px;
+}
+
+/*Drop-down menu*/
+.dropdown-item[b-631j2yxniw] {
+    padding: 0;
+}
+
+.dropdown-item button[b-631j2yxniw] {
+    border: 0;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 0.375rem 1.5rem;
+    text-align: left;
+    color: #888888;
+    background-color: white;
+}
+
+    .dropdown-item button:hover[b-631j2yxniw] {
+        background-color: #f8f9fa;
+        color: black;
+    }
 /* _content/HelpDeskWebSite/Views/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
